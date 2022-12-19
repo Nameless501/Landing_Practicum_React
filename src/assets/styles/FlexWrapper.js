@@ -11,4 +11,10 @@ export const FlexWrapper = styled.div`
   background-color: ${(props) => props.theme.colors.main[props.color]};
   border: 0;
   border-radius: ${(props) => props.radius};
+  align-items: ${(props) => props.align};
+  justify-content: ${(props) => props.justify};
+
+  &:hover {
+    cursor: ${(props) => props.pointer ? "pointer" : "auto"};
+  }
 `

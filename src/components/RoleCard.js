@@ -35,7 +35,7 @@ function RoleCard({ image, title, children }) {
         </FlexWrapper>
       </FlexWrapper>
       <ButtonSecondary >
-        <TextExtraSmall>
+        <TextExtraSmall white >
           {`Хочу стать ${title}ом`}
         </TextExtraSmall>
       </ButtonSecondary>

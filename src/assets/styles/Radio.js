@@ -5,6 +5,7 @@ export const InputRadio = styled.input.attrs(props => ({
   name: props.name,
   id: props.id,
   value: props.value,
+  defaultChecked: props.defaultChecked,
 }))`
   margin: 0;
   padding: 0;

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import whiteArrow from '../images/arrow_white.svg';
+import blackArrow from '../images/arrow_black.svg';
 
 export const Button = styled.button`
   margin: 0;
@@ -46,6 +48,21 @@ export const ButtonSecondary = styled(Button)`
   }
 `
 
+export const ButtonSecondarySmall = styled(Button)`
+  width: 200px;
+  height: 50px;
+  background-color: ${({ theme }) => theme.colors.main.white};
+  color: ${({ theme }) => theme.colors.button.secondary};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.main.gray};
+  }
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.main.gray};
+  }
+`
+
 export const ButtonGhost = styled(Button)`
   width: 285px;
   height: 50px;
@@ -59,5 +76,27 @@ export const ButtonGhost = styled(Button)`
 
   &:active {
     background-color: ${({ theme }) => theme.colors.button.lightGray};
+  }
+`
+
+export const ButtonArrow = styled(Button)`
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url(${blackArrow});
+  background-size: 34px 34px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(${props => props.isOpen ? "180deg" : "0"});
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.main.black};
+    background-image: url(${whiteArrow});
+  }
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.main.black};
+    background-image: url(${whiteArrow});
   }
 `

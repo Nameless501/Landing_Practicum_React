@@ -1,7 +1,7 @@
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
 import RadioButton from "./RadioButton";
 
-function RoleSelect() {
+function RoleSelect({ handleSelectedChange }) {
   return (
     <FlexWrapper
       as="fieldset"
@@ -14,6 +14,8 @@ function RoleSelect() {
         id="role-mentor"
         value="mentor"
         text="Наставник"
+        defaultChecked
+        handleChange={handleSelectedChange}
       />
       <RadioButton
         size="M"
@@ -21,6 +23,7 @@ function RoleSelect() {
         id="role-reviewer"
         value="reviewer"
         text="Ревьюер"
+        handleChange={handleSelectedChange}
       />
     </FlexWrapper>
   );

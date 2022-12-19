@@ -14,8 +14,6 @@ export const H1 = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.h1};
   font-size: ${({ theme }) => theme.fonts.size.h1};
   line-height: ${({ theme }) => theme.fonts.lineHeight.h1};
-
-
 `
 
 export const H2 = styled(Text)`
@@ -37,6 +35,9 @@ export const TextLarge = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.large};
   font-size: ${({ theme }) => theme.fonts.size.large};
   line-height: ${({ theme }) => theme.fonts.lineHeight.large};
+  color: ${(props) => props.white ?
+    props.theme.colors.main.white : props.theme.colors.main.black
+  }
 `
 
 export const TextRegular = styled(Text)`
@@ -44,6 +45,9 @@ export const TextRegular = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.regular};
   font-size: ${({ theme }) => theme.fonts.size.regular};
   line-height: ${({ theme }) => theme.fonts.lineHeight.regular};
+  color: ${(props) => props.white ?
+    props.theme.colors.main.white : props.theme.colors.main.black
+  }
 `
 
 export const TextRegularBold = styled(Text)`
@@ -51,6 +55,12 @@ export const TextRegularBold = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.regularBold};
   font-size: ${({ theme }) => theme.fonts.size.regularBold};
   line-height: ${({ theme }) => theme.fonts.lineHeight.regularBold};
+  color: ${(props) => props.white ?
+    props.theme.colors.main.white
+      : props.blue ?
+        props.theme.colors.main.blue :
+        props.theme.colors.main.black
+  }
 `
 
 export const TextSmall = styled(Text)`
@@ -58,6 +68,9 @@ export const TextSmall = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.small};
   font-size: ${({ theme }) => theme.fonts.size.small};
   line-height: ${({ theme }) => theme.fonts.lineHeight.small};
+  color: ${(props) => props.white ?
+    props.theme.colors.main.white : props.theme.colors.main.black
+  }
 `
 
 export const TextExtraSmall = styled(Text)`
@@ -65,6 +78,9 @@ export const TextExtraSmall = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.extraSmall};
   font-size: ${({ theme }) => theme.fonts.size.extraSmall};
   line-height: ${({ theme }) => theme.fonts.lineHeight.extraSmall};
+  color: ${(props) => props.white ?
+    props.theme.colors.main.white : props.theme.colors.main.black
+  }
 `
 
 export const TextRadio = styled(Text)`

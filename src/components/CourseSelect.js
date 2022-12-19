@@ -1,7 +1,7 @@
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
 import RadioButton from "./RadioButton";
 
-function CourseSelect() {
+function CourseSelect({ handleSelectedChange }) {
   return (
     <FlexWrapper
       as="fieldset"
@@ -18,6 +18,8 @@ function CourseSelect() {
         id="course-programming"
         value="programming"
         text="Программирование"
+        defaultChecked
+        handleChange={handleSelectedChange}
       />
       <RadioButton
         size="S"
@@ -25,6 +27,7 @@ function CourseSelect() {
         id="course-analytics"
         value="analytics"
         text="Аналитика"
+        handleChange={handleSelectedChange}
       />
       <RadioButton
         size="S"
@@ -32,6 +35,7 @@ function CourseSelect() {
         id="course-design"
         value="design"
         text="Дизайн"
+        handleChange={handleSelectedChange}
       />
       <RadioButton
         size="S"
@@ -39,6 +43,7 @@ function CourseSelect() {
         id="course-marketing"
         value="marketing"
         text="Маркетинг"
+        handleChange={handleSelectedChange}
       />
       <RadioButton
         size="S"
@@ -46,6 +51,7 @@ function CourseSelect() {
         id="course-management"
         value="management"
         text="Менеджмент"
+        handleChange={handleSelectedChange}
       />
     </FlexWrapper>
   );

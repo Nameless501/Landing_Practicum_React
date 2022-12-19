@@ -35,7 +35,7 @@ function Lead() {
           margin='0 0 0 30px'
         >
           <ButtonPrimary >
-            <TextSmall>
+            <TextSmall white>
               Хочу делиться знаниями
             </TextSmall>
           </ButtonPrimary>
