@@ -1,34 +1,21 @@
-import { InputRadio, ButtonRadioM, ButtonRadioS } from '../assets/styles/Radio';
-import { TextRadio } from '../assets/styles/Text';
+import { InputRadioHidden } from '../assets/styles/Radio';
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
 
-function RadioButton({ name, value, id, text, size, handleChange, defaultChecked=false }) {
+function RadioButton({ name, value, id, TextElement, text, Button, handleChange, defaultChecked = false }) {
   return (
     <FlexWrapper>
-      <InputRadio
+      <InputRadioHidden
         value={value}
         name={name}
         id={id}
         defaultChecked={defaultChecked}
         onChange={handleChange}
       />
-      {
-        size === "M" ?
-          (<ButtonRadioM id={id}>
-            <TextRadio >
-              {text}
-            </TextRadio>
-          </ButtonRadioM>)
-          :
-          size === "S" ?
-            (<ButtonRadioS id={id}>
-              <TextRadio >
-                {text}
-              </TextRadio>
-            </ButtonRadioS>)
-            :
-            ''
-      }
+      <Button id={id}>
+          <TextElement>
+            {text}
+          </TextElement>
+      </Button>
     </FlexWrapper>
   );
 }

@@ -10,11 +10,32 @@ export const FlexWrapper = styled.div`
   gap: ${(props) => props.gap};
   background-color: ${(props) => props.theme.colors.main[props.color]};
   border: 0;
+  flex-wrap: ${(props) => props.wrap};
   border-radius: ${(props) => props.radius};
   align-items: ${(props) => props.align};
   justify-content: ${(props) => props.justify};
+  position: ${(props) => props.position};
 
   &:hover {
     cursor: ${(props) => props.pointer ? "pointer" : "auto"};
+  }
+`
+
+export const LinkFlexWrapper = styled(FlexWrapper).attrs(props => ({
+  href: props.link,
+  target: "_blank",
+}))`
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > p {
+    color: ${({ theme }) => theme.colors.main.blue};
+  }
+
+  &:active > p {
+    color: ${({ theme }) => theme.colors.button.darkBlue};
   }
 `

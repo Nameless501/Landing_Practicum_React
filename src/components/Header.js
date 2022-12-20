@@ -1,5 +1,5 @@
 
-import NavigationBar from './NavigationBar';
+import NavigationBarHeader from './NavigationBarHeader';
 import { StyledHeader } from '../assets/styles/StyledHeader';
 import { YandexLogo } from '../assets/styles/YandexLogo'
 import { ButtonGhost } from '../assets/styles/Button';
@@ -9,7 +9,7 @@ function Header() {
   return (
     <StyledHeader>
       <YandexLogo />
-      <NavigationBar />
+      <NavigationBarHeader />
       <ButtonGhost>
         <TextSmall>
           Хочу делиться знаниями

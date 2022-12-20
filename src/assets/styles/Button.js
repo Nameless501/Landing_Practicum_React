@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import whiteArrow from '../images/arrow_white.svg';
 import blackArrow from '../images/arrow_black.svg';
+import whitePlay from '../images/play_white.svg';
+import blackPlay from '../images/play_black.svg';
+import closeIcon from '../images/close_icon.svg';
 
-export const Button = styled.button`
+export const Button = styled.button.attrs(props => ({
+  type: props.type ? props.type : "button",
+}))`
   margin: 0;
   padding: 0;
   display: block;
@@ -99,4 +104,40 @@ export const ButtonArrow = styled(Button)`
     background-color: ${({ theme }) => theme.colors.main.black};
     background-image: url(${whiteArrow});
   }
+`
+
+export const ButtonVideo = styled(Button)`
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.main.white};
+  background-image: url(${blackPlay});
+  background-repeat: no-repeat;
+  background-position: 55% 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.main.blue};
+    background-image: url(${whitePlay});
+  }
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.button.darkBlue};
+    background-image: url(${whitePlay});
+  }
+`
+
+export const ButtonClosePopup = styled(Button)`
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  background-image: url(${closeIcon});
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 30px;
+  right: 40px;
 `

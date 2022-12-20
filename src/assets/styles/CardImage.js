@@ -7,6 +7,7 @@ export const CardImage = styled.img.attrs(props => ({
   margin: 0;
   padding: 0;
   display: block;
+  object-fit: cover;
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border-radius: ${(props) => props.radius};

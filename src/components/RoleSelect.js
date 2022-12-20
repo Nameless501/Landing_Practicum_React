@@ -1,4 +1,6 @@
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
+import { ButtonRadioM } from '../assets/styles/Radio';
+import { TextRadio } from '../assets/styles/Text';
 import RadioButton from "./RadioButton";
 
 function RoleSelect({ handleSelectedChange }) {
@@ -9,7 +11,8 @@ function RoleSelect({ handleSelectedChange }) {
       gap="8px"
     >
       <RadioButton
-        size="M"
+        Button={ButtonRadioM}
+        TextElement={TextRadio}
         name="role"
         id="role-mentor"
         value="mentor"
@@ -18,7 +21,8 @@ function RoleSelect({ handleSelectedChange }) {
         handleChange={handleSelectedChange}
       />
       <RadioButton
-        size="M"
+        Button={ButtonRadioM}
+        TextElement={TextRadio}
         name="role"
         id="role-reviewer"
         value="reviewer"

@@ -1,4 +1,6 @@
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
+import { ButtonRadioSWhite } from '../assets/styles/Radio';
+import { TextRadio } from '../assets/styles/Text';
 import RadioButton from "./RadioButton";
 
 function CourseSelect({ handleSelectedChange }) {
@@ -13,7 +15,8 @@ function CourseSelect({ handleSelectedChange }) {
       radius="16px"
     >
       <RadioButton
-        size="S"
+        Button={ButtonRadioSWhite}
+        TextElement={TextRadio}
         name="course"
         id="course-programming"
         value="programming"
@@ -22,7 +25,8 @@ function CourseSelect({ handleSelectedChange }) {
         handleChange={handleSelectedChange}
       />
       <RadioButton
-        size="S"
+        Button={ButtonRadioSWhite}
+        TextElement={TextRadio}
         name="course"
         id="course-analytics"
         value="analytics"
@@ -30,7 +34,8 @@ function CourseSelect({ handleSelectedChange }) {
         handleChange={handleSelectedChange}
       />
       <RadioButton
-        size="S"
+        Button={ButtonRadioSWhite}
+        TextElement={TextRadio}
         name="course"
         id="course-design"
         value="design"
@@ -38,7 +43,8 @@ function CourseSelect({ handleSelectedChange }) {
         handleChange={handleSelectedChange}
       />
       <RadioButton
-        size="S"
+        Button={ButtonRadioSWhite}
+        TextElement={TextRadio}
         name="course"
         id="course-marketing"
         value="marketing"
@@ -46,7 +52,8 @@ function CourseSelect({ handleSelectedChange }) {
         handleChange={handleSelectedChange}
       />
       <RadioButton
-        size="S"
+        Button={ButtonRadioSWhite}
+        TextElement={TextRadio}
         name="course"
         id="course-management"
         value="management"

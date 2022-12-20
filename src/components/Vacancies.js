@@ -8,7 +8,7 @@ import NoAvailableVacancies from "./NoAvailableVacancies";
 import VacanciesList from "./VacanciesList";
 import { vacanciesData } from "../utils/vacancies";
 
-function Vacancies() {
+function Vacancies({ handleOpen }) {
   const [selected, setSelected] = useState({ role: 'mentor', course: 'programming' });
   const [vacancies, setVacancies] = useState([]);
 
@@ -51,7 +51,7 @@ function Vacancies() {
         </FlexWrapper>
         {vacancies.length > 0 && <VacanciesList vacancies={vacancies} />}
       </FlexWrapper>
-      {vacancies.length === 0 && <NoAvailableVacancies />}
+      {vacancies.length === 0 && <NoAvailableVacancies handleOpen={handleOpen} />}
     </SectionWrapper>
   );
 }

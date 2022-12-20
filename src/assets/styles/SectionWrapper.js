@@ -5,7 +5,13 @@ export const SectionWrapper = styled.section`
   margin-top: ${
     props => props.margin ? props.theme.margins[props.margin] : '0'
   };
-  padding: 0;
-  max-width: ${({ theme }) => theme.section.width};
+  padding: ${
+    props => props.padding ? props.padding : '0'
+  };
+  max-width: ${(props) => props.maxWidth ?
+    props.maxWidth : props.theme.section.width
+  };
   box-sizing: border-box;
+  border-radius: ${(props) => props.radius};
+  background-color: ${(props) => props.theme.colors.main[props.color]};
 `

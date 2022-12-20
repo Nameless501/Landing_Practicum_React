@@ -2,7 +2,7 @@ import { TextLarge, TextRegular, TextExtraSmall } from "../assets/styles/Text";
 import { ButtonSecondarySmall } from '../assets/styles/Button';
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
 
-function NoAvailableVacancies() {
+function NoAvailableVacancies({ handleOpen }) {
   return (
     <FlexWrapper
       margin="50px 0 0"
@@ -25,7 +25,9 @@ function NoAvailableVacancies() {
           Расскажите нам о себе и мы сохраним ваши данные для возможного сотрудничества в будущем
         </TextRegular>
       </FlexWrapper>
-      <ButtonSecondarySmall>
+      <ButtonSecondarySmall
+        onClick={handleOpen}
+      >
         <TextExtraSmall>
           Рассказать о себе
         </TextExtraSmall>

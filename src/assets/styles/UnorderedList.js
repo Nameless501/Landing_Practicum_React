@@ -5,6 +5,7 @@ export const UnorderedList = styled.ul`
   padding: 0;
   box-sizing: border-box;
   display: flex;
+  max-width: ${props => props.maxWidth};
   flex-direction: ${props => props.direction};
   align-items: ${props => props.align ? props.align : "center"};
   gap: ${props => props.gap};

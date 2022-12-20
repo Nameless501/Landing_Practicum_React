@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Text = styled.p`
   margin: 0;
   padding: 0;
+  text-align: ${(props) => props.align};
 
   &:first-letter {
     text-transform: uppercase;
@@ -46,7 +47,8 @@ export const TextRegular = styled(Text)`
   font-size: ${({ theme }) => theme.fonts.size.regular};
   line-height: ${({ theme }) => theme.fonts.lineHeight.regular};
   color: ${(props) => props.white ?
-    props.theme.colors.main.white : props.theme.colors.main.black
+    props.theme.colors.main.white : props.gray ?
+      props.theme.colors.main.darkGray : props.theme.colors.main.black
   }
 `
 
@@ -102,4 +104,7 @@ export const TextInput = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.input};
   font-size: ${({ theme }) => theme.fonts.size.input};
   line-height: ${({ theme }) => theme.fonts.lineHeight.input};
+  color: ${(props) => props.error ?
+    props.theme.colors.service.error : props.theme.colors.main.black
+  }
 `

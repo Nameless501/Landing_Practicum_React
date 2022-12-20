@@ -2,7 +2,7 @@ import { NavLink } from '../assets/styles/Link';
 import { TextRegular } from '../assets/styles/Text';
 import { UnorderedList } from '../assets/styles/UnorderedList';
 
-function NavigationBar() {
+function NavigationBarHeader() {
   return (
     <UnorderedList direction="row" gap="35px" >
       <li>
@@ -37,4 +37,4 @@ function NavigationBar() {
   );
 }
 
-export default NavigationBar;
+export default NavigationBarHeader;
