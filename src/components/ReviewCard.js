@@ -2,7 +2,11 @@ import { ButtonVideo } from '../assets/styles/Button';
 import { CardWithVideo } from "../assets/styles/Card";
 import { CardImage } from "../assets/styles/CardImage";
 
-function ReviewCard({ image, gridArea }) {
+function ReviewCard({ image, value, gridArea, handleOpen }) {
+  function onClick() {
+    handleOpen(value);
+  }
+
   return (
     <CardWithVideo
       width="100%"
@@ -16,7 +20,9 @@ function ReviewCard({ image, gridArea }) {
         radius="30px"
         src={image}
       />
-      <ButtonVideo />
+      <ButtonVideo
+        onClick={onClick}
+      />
     </CardWithVideo>
   );
 }

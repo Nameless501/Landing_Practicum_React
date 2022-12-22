@@ -10,7 +10,7 @@ function Footer() {
   return (
     <SectionWrapper
       as="footer"
-      margin='L'
+      margin='XL'
       padding="80px 120px 120px"
       maxWidth="100%"
       radius="40px 40px 0px 0px"

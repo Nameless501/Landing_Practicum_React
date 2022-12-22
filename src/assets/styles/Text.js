@@ -4,6 +4,7 @@ export const Text = styled.p`
   margin: 0;
   padding: 0;
   text-align: ${(props) => props.align};
+  text-decoration: none;
 
   &:first-letter {
     text-transform: uppercase;
@@ -37,7 +38,10 @@ export const TextLarge = styled(Text)`
   font-size: ${({ theme }) => theme.fonts.size.large};
   line-height: ${({ theme }) => theme.fonts.lineHeight.large};
   color: ${(props) => props.white ?
-    props.theme.colors.main.white : props.theme.colors.main.black
+    props.theme.colors.main.white
+      : props.blue ?
+        props.theme.colors.main.blue :
+        props.theme.colors.main.black
   }
 `
 

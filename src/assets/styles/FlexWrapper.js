@@ -23,7 +23,7 @@ export const FlexWrapper = styled.div`
 
 export const LinkFlexWrapper = styled(FlexWrapper).attrs(props => ({
   href: props.link,
-  target: "_blank",
+  target: props.self ? "_self" : "_blank",
 }))`
   text-decoration: none;
 

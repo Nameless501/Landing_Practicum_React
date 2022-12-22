@@ -3,7 +3,7 @@ import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import { InputRadio, LabelRadio } from "../assets/styles/Radio";
 import FormInput from "./FormInput";
 
-function PopupContactsTypeSelect() {
+function PopupContactsTypeSelect({ getInputValue }) {
   const [selectedInput, setSelectedInput] = useState("telephone");
 
   function handleChange(evt) {
@@ -59,6 +59,8 @@ function PopupContactsTypeSelect() {
           type="tel"
           name="phone"
           placeholder="+7"
+          required
+          getInputValue={getInputValue}
         />
       }
       {selectedInput === "telegram" &&
@@ -68,6 +70,8 @@ function PopupContactsTypeSelect() {
           placeholder="@"
           minLength="5"
           maxLength="32"
+          required
+          getInputValue={getInputValue}
         />
       }
     </FlexWrapper>

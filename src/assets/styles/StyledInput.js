@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledInput = styled.input.attrs(props => ({
   type: props.type,
   name: props.name,
+  value: props.value || '',
   placeholder: props.placeholder,
   minLength: props.minLength,
   maxLength: props.maxLength,
@@ -12,12 +13,14 @@ export const StyledInput = styled.input.attrs(props => ({
   padding: 0 12px 0 16px;
   width: 384px;
   height: 50px;
-  border: 2px solid ${({ theme }) => theme.colors.service.neytral};
+  border: 2px solid ${(props) => props.theme.colors.service[props.state]};
   border-radius: 14px;
 
   &:focus {
     outline: none;
-    border: 2px solid ${({ theme }) => theme.colors.button.secondary};
+    border: 2px solid ${(props) => props.state === 'neytral' ?
+      props.theme.colors.button.secondary : props.theme.colors.service[props.state]
+    };
   }
 
   &:placeholder {

@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import { TextRegularBold, TextRegular, TextSmall } from "../assets/styles/Text";
 import { ButtonPrimary } from '../assets/styles/Button';
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import { UnorderedList } from "../assets/styles/UnorderedList";
 import { TextSpan } from "../assets/styles/StyledSpan";
 
-function VacancyDescription({ role, salary, description, courseLength }) {
+function VacancyDescription({ vacancy }) {
   return (
     <FlexWrapper
       margin="0 0 26px"
@@ -13,23 +14,23 @@ function VacancyDescription({ role, salary, description, courseLength }) {
       direction="column"
     >
       <TextRegularBold blue>
-        {`[Оплата в среднем ${salary} тысяч ₽]`}
+        {`[Оплата в среднем ${vacancy.salary} тысяч ₽]`}
       </TextRegularBold>
       <FlexWrapper
         gap="15px"
         direction="column"
       >
         <TextRegularBold blue>
-          {role === 'mentor' && 'Что делает наставник?'}
-          {role === 'reviewer' && 'Что делает ревьюер?'}
+          {vacancy.role === 'mentor' && 'Что делает наставник?'}
+          {vacancy.role === 'reviewer' && 'Что делает ревьюер?'}
         </TextRegularBold>
         <TextRegular>
-          {role === 'mentor' &&
+          {vacancy.role === 'mentor' &&
             `Наставник помогает студентам учиться: отвечает на вопросы и помогает с трудностями.
             Каждый наставник курирует группу из 50 студентов: общается с ними в Slack, проводит групповые звонки на
-            протяжении ${courseLength} месяцев обучения и постоянно улучшает образовательный опыт.`
+            протяжении ${vacancy.courseLength} месяцев обучения и постоянно улучшает образовательный опыт.`
           }
-          {role === 'reviewer' &&
+          {vacancy.role === 'reviewer' &&
             `Проверяет написанный студентом код и даёт обратную связь.
             Именно ревьюер решает: зачесть задание или нет. Также он
             даёт советы по улучшению кода, отмечает неточности,
@@ -42,8 +43,8 @@ function VacancyDescription({ role, salary, description, courseLength }) {
         direction="column"
       >
         <TextRegularBold blue>
-          {role === 'mentor' && 'Я хочу стать наставником. Меня возьмут?'}
-          {role === 'reviewer' && 'Я хочу стать ревьюером. Меня возьмут?'}
+          {vacancy.role === 'mentor' && 'Я хочу стать наставником. Меня возьмут?'}
+          {vacancy.role === 'reviewer' && 'Я хочу стать ревьюером. Меня возьмут?'}
         </TextRegularBold>
         <FlexWrapper
           gap="5px"
@@ -56,7 +57,7 @@ function VacancyDescription({ role, salary, description, courseLength }) {
             direction="column"
             align="flex-start"
           >
-            {description.map((requirement, index) => {
+            {vacancy.description.map((requirement, index) => {
               return (
                 <li key={index} >
                   <TextRegular>
@@ -74,7 +75,13 @@ function VacancyDescription({ role, salary, description, courseLength }) {
           </UnorderedList>
         </FlexWrapper>
       </FlexWrapper>
-      <ButtonPrimary>
+      <ButtonPrimary
+        as={Link}
+        to={{
+          pathname: "/vacancy",
+          state: { vacancy },
+        }}
+      >
         <TextSmall white >
           Откликнуться
         </TextSmall>

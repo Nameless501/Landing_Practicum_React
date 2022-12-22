@@ -3,7 +3,7 @@ import { H2 } from "../assets/styles/Text";
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
 import VideoReviews from "./VideoReviews";
 
-function Reviews() {
+function Reviews({ handleOpen }) {
   return (
     <SectionWrapper margin='L' >
       <FlexWrapper
@@ -13,7 +13,9 @@ function Reviews() {
         <H2>
           Истории ребят из нашей команды
         </H2>
-        <VideoReviews />
+        <VideoReviews
+          handleOpen={handleOpen}
+        />
       </FlexWrapper>
     </SectionWrapper>
   );

@@ -6,7 +6,7 @@ export const InputCheckbox = styled.input.attrs(props => ({
   name: props.name,
   id: props.id,
   value: props.value,
-  require: true,
+  required: props.required ? true : false,
 }))`
   margin: 0;
   padding: 0;

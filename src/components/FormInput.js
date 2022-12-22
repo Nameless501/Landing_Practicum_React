@@ -1,29 +1,16 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import useInputValidation from "../hooks/useInputValidation";
 import { TextInput } from "../assets/styles/Text";
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import { StyledInput } from "../assets/styles/StyledInput";
 import { TextSpan } from "../assets/styles/StyledSpan";
 
-function FormInput({ type, name, placeholder, minLength, maxLength }) {
-  const [validationState, setValidationState] = useState({ isValid: '', message: '' });
+function FormInput({ type, name, placeholder, minLength, maxLength, getInputValue }) {
+  const { inputValue, inputState, errorMessage, onChange, clearInput } = useInputValidation(getInputValue);
 
-  function checkValidity(evt) {
-    if (evt.target.validity.valid) {
-      setValidationState(
-        {
-          isValid: true,
-          message: '',
-        }
-      )
-    } else {
-      setValidationState(
-        {
-          isValid: false,
-          message: evt.target.validationMessage,
-        }
-      )
-    }
-  }
+  useEffect(() => {
+    clearInput();
+  }, []);
 
   return (
     <FlexWrapper
@@ -33,16 +20,19 @@ function FormInput({ type, name, placeholder, minLength, maxLength }) {
         type={type}
         name={name}
         placeholder={placeholder}
-        onChange={checkValidity}
+        state={inputState}
+        onChange={onChange}
+        value={inputValue[name]}
         minLength={minLength}
         maxLength={maxLength}
+        required
       />
       <TextSpan
         padding="2px 0"
         minHeight="20px"
       >
         <TextInput error >
-          {validationState.message}
+          {errorMessage}
         </TextInput>
       </TextSpan>
     </FlexWrapper>

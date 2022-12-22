@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FlexWrapper } from "./FlexWrapper";
 import whiteArrow from '../images/arrow_white.svg';
 import blackArrow from '../images/arrow_black.svg';
 import whitePlay from '../images/play_white.svg';
@@ -7,6 +8,7 @@ import closeIcon from '../images/close_icon.svg';
 
 export const Button = styled.button.attrs(props => ({
   type: props.type ? props.type : "button",
+  disabled: props.disabled ? true : false,
 }))`
   margin: 0;
   padding: 0;
@@ -17,9 +19,22 @@ export const Button = styled.button.attrs(props => ({
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.main.gray};
+  }
+
+  &:disabled > p {
+    color: ${({ theme }) => theme.colors.button.gray};
   }
 `
 
@@ -27,7 +42,10 @@ export const ButtonPrimary = styled(Button)`
   width: 315px;
   height: 60px;
   background-color: ${({ theme }) => theme.colors.button.secondary};
-  color: ${({ theme }) => theme.colors.main.white};
+
+  & > p {
+    color: ${({ theme }) => theme.colors.main.white};
+  }
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.main.blue};
@@ -35,21 +53,19 @@ export const ButtonPrimary = styled(Button)`
 
   &:active {
     background-color: ${({ theme }) => theme.colors.button.darkBlue};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.button.lightGray};
   }
 `
 
-export const ButtonSecondary = styled(Button)`
+export const ButtonSecondary = styled(ButtonPrimary)`
   width: 285px;
   height: 50px;
-  background-color: ${({ theme }) => theme.colors.button.secondary};
-  color: ${({ theme }) => theme.colors.main.white};
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.main.blue};
-  }
-
-  &:active {
-    background-color: ${({ theme }) => theme.colors.button.darkBlue};
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.main.gray};
   }
 `
 
@@ -57,7 +73,10 @@ export const ButtonSecondarySmall = styled(Button)`
   width: 200px;
   height: 50px;
   background-color: ${({ theme }) => theme.colors.main.white};
-  color: ${({ theme }) => theme.colors.button.secondary};
+
+  & > p {
+    color: ${({ theme }) => theme.colors.button.secondary};
+  }
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.main.gray};
@@ -95,7 +114,7 @@ export const ButtonArrow = styled(Button)`
   background-position: center;
   transform: rotate(${props => props.isOpen ? "180deg" : "0"});
 
-  &:hover {
+  ${FlexWrapper}:hover > & {
     background-color: ${({ theme }) => theme.colors.main.black};
     background-image: url(${whiteArrow});
   }
@@ -138,6 +157,6 @@ export const ButtonClosePopup = styled(Button)`
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 30px;
-  right: 40px;
+  top: ${(props) => props.top};
+  right: ${(props) => props.right};
 `

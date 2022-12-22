@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PopupWrapper = styled.section`
+export const PopupSectionWrapper = styled.section`
   margin: 0;
   padding: 0;
   width: 100vw;

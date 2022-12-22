@@ -7,7 +7,7 @@ import image4 from "../assets/images/Vova.jpg";
 import image5 from "../assets/images/Rita.jpg";
 import image6 from "../assets/images/Polina.jpg";
 
-function VideoReviews() {
+function VideoReviews({ handleOpen }) {
   return (
         <VideoGridWrapper
           max-width="100%"
@@ -15,26 +15,38 @@ function VideoReviews() {
           <ReviewCard
             gridArea="leftTop"
             image={image1}
+            value="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            handleOpen={handleOpen}
           />
           <ReviewCard
             gridArea="middleTop"
             image={image2}
+            value="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            handleOpen={handleOpen}
           />
           <ReviewCard
             gridArea="rightTop"
             image={image3}
+            value="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            handleOpen={handleOpen}
           />
           <ReviewCard
             gridArea="leftBottom"
             image={image4}
+            value="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            handleOpen={handleOpen}
           />
           <ReviewCard
             gridArea="middleBottom"
             image={image5}
+            value="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            handleOpen={handleOpen}
           />
           <ReviewCard
             gridArea="rightBottom"
             image={image6}
+            value="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            handleOpen={handleOpen}
           />
         </VideoGridWrapper>
   );

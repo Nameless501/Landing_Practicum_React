@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ButtonGhost } from '../assets/styles/Button';
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import { TextSmall } from '../assets/styles/Text';
@@ -8,21 +8,22 @@ import VacancyDescription from './VacancyDescription';
 import { UnorderedList } from '../assets/styles/UnorderedList';
 
 function VacanciesList({ vacancies }) {
-  const [renderedVacancies, setRenderedVacancies] = useState([...vacancies.slice(0, 6)]);
-  const [showButton, setButtonState] = useState(renderedVacancies.length < vacancies.length);
+  const [renderedVacancies, setRenderedVacancies] = useState([]);
 
   function showNextVacancies() {
-    if(vacancies.length > renderedVacancies.length) {
+    if (vacancies.length > renderedVacancies.length) {
       const index = renderedVacancies.length;
 
       setRenderedVacancies(current => [
         ...current,
         ...vacancies.slice(index, index + 6)
       ])
-    } else {
-      setButtonState(false);
     }
   }
+
+  useEffect(() => {
+    setRenderedVacancies([...vacancies.slice(0, 6)]);
+  }, [vacancies])
 
   return (
     <FlexWrapper
@@ -44,10 +45,7 @@ function VacanciesList({ vacancies }) {
                   name={vacancy.name}
                 >
                   <VacancyDescription
-                    role={vacancy.role}
-                    salary={vacancy.salary}
-                    description={vacancy.description}
-                    courseLength={vacancy.courseLength}
+                    vacancy={vacancy}
                   />
                 </Dropdown>
                 <Divider />
@@ -57,14 +55,14 @@ function VacanciesList({ vacancies }) {
           }
         </UnorderedList>
       </FlexWrapper>
-      {showButton &&
+      {renderedVacancies.length < vacancies.length &&
         <ButtonGhost
           onClick={showNextVacancies}
         >
           <TextSmall >
             Показать еще
           </TextSmall>
-      </ButtonGhost>
+        </ButtonGhost>
       }
     </FlexWrapper>
   );

@@ -1,61 +1,73 @@
+import { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Theme } from '../assets/styles/Theme';
 import GlobalStyles from '../assets/styles/Global';
 import { PageWrapper } from '../assets/styles/PageWrapper';
 import Header from './Header';
-import Lead from './Lead';
-import HowTo from './HowTo';
-import ChooseRole from './ChooseRole';
-import Vacancies from './Vacancies';
-import Reviews from './Reviews';
-import FAQ from './FAQ';
-import Contacts from './Contacts';
+import MainPage from './MainPage';
+import VacancyPage from './VacancyPage';
 import Footer from './Footer';
 import Portal from './Portal';
-import { PopupWrapper } from '../assets/styles/PopupWrapper';
+import PopupWrapper from './PopupWrapper';
 import PopupWithForm from './PopupWithForm';
-import { useState } from 'react';
+import PopupWithVideo from './PopupWithVideo';
 
 function App() {
-  const [popupIsOpen, setPopupState] = useState(false);
+  const [formPopupState, setFormPopupState] = useState(false);
+  const [videoPopupState, setVideoPopupState] = useState({ open: false, video: '' })
 
   function handleClosePopups() {
-    setPopupState(false);
+    setFormPopupState(false);
+    setVideoPopupState({ open: false, video: '' });
   }
 
-  function handleOpenPopup() {
-    setPopupState(true);
+  function handleOpenFormPopup() {
+    setFormPopupState(true);
+  }
+
+  function handleOpenVideoPopup(video) {
+    setVideoPopupState({ open: true, video });
   }
 
   return (
     <ThemeProvider theme={Theme} >
       <PageWrapper>
         <GlobalStyles />
+        <Header
+          handleOpen={handleOpenFormPopup}
+        />
         <Switch>
           <Route exact path='/' >
-            <Header />
-            <Lead />
-            <HowTo />
-            <ChooseRole />
-            <Vacancies
-              handleOpen={handleOpenPopup}
+            <MainPage
+              handleOpenFormPopup={handleOpenFormPopup}
+              handleOpenVideoPopup={handleOpenVideoPopup}
             />
-            <Reviews />
-            <FAQ />
-            <Contacts />
-            <Footer />
           </Route>
           <Route path='/vacancy' >
-            <Header />
-            <Footer />
+            <VacancyPage
+              handleOpen={handleOpenFormPopup}
+            />
           </Route>
         </Switch>
+        <Footer />
         <Portal>
-          {popupIsOpen &&
-            <PopupWrapper>
+          {formPopupState &&
+            <PopupWrapper
+              handleClose={handleClosePopups}
+            >
               <PopupWithForm
                 handleClose={handleClosePopups}
+              />
+            </PopupWrapper>
+          }
+          {videoPopupState.open &&
+            <PopupWrapper
+              handleClose={handleClosePopups}
+            >
+              <PopupWithVideo
+                handleClose={handleClosePopups}
+                src={videoPopupState.video}
               />
             </PopupWrapper>
           }

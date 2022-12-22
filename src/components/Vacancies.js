@@ -21,7 +21,7 @@ function Vacancies({ handleOpen }) {
 
   function getSelectedVacancies() {
     const currentVacancies = vacanciesData[selected.course][selected.role];
-    setVacancies(currentVacancies);
+    setVacancies(() => currentVacancies);
   }
 
   useEffect(() => {

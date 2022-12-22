@@ -1,9 +1,19 @@
+import { useEffect } from 'react';
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
 import { TextRadio, TextRadioSmall } from '../assets/styles/Text';
 import { ButtonRadioSBlack } from '../assets/styles/Radio';
 import RadioButton from "./RadioButton";
 
-function RoleSelectPopup() {
+function RoleSelectPopup({ getInputValue }) {
+  useEffect(() => {
+    getInputValue('role-popup', 'mentor')
+  }, []);
+
+  function handleChange(evt) {
+    const { name, value } = evt.target;
+    getInputValue(name, value);
+  }
+
   return (
     <FlexWrapper
       direction="column"
@@ -26,6 +36,7 @@ function RoleSelectPopup() {
           value="mentor"
           text="Наставник"
           defaultChecked
+          handleChange={handleChange}
         />
         <RadioButton
           Button={ButtonRadioSBlack}
@@ -34,6 +45,7 @@ function RoleSelectPopup() {
           id="role-reviewer-popup"
           value="reviewer"
           text="Ревьюер"
+          handleChange={handleChange}
         />
       </FlexWrapper>
     </FlexWrapper>
