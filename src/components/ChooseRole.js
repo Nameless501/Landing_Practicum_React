@@ -7,7 +7,7 @@ import RoleCard from "./RoleCard";
 import mentor from '../assets/images/mentor.jpg';
 import reviewer from '../assets/images/reviewer.jpg';
 
-function ChooseRole() {
+function ChooseRole({ setRoleAndCourse }) {
   return (
     <SectionWrapper margin='XL' >
       <FlexWrapper
@@ -23,7 +23,9 @@ function ChooseRole() {
         >
           <RoleCard
             image={mentor}
-            title='наставник'
+            title="наставник"
+            value="mentor"
+            setRoleAndCourse={setRoleAndCourse}
           >
             <UnorderedList
               direction="column"
@@ -67,6 +69,8 @@ function ChooseRole() {
           <RoleCard
             image={reviewer}
             title='ревьюер'
+            value="reviewer"
+            setRoleAndCourse={setRoleAndCourse}
           >
             <UnorderedList
               direction="column"

@@ -1,10 +1,19 @@
+import { scroller } from 'react-scroll';
 import { H3, TextExtraSmall } from "../assets/styles/Text";
 import { ButtonSecondary } from "../assets/styles/Button";
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import { Card } from "../assets/styles/Card";
 import { CardImage } from "../assets/styles/CardImage";
 
-function RoleCard({ image, title, children }) {
+function RoleCard({ image, title, value, setRoleAndCourse, children }) {
+  function handleClick(evt) {
+    setRoleAndCourse(current => ({
+      ...current,
+      roleSelect: value,
+    }))
+    scroller.scrollTo('vacancies');
+  }
+
   return (
     <Card
       padding="50px"
@@ -34,7 +43,9 @@ function RoleCard({ image, title, children }) {
           {children}
         </FlexWrapper>
       </FlexWrapper>
-      <ButtonSecondary >
+      <ButtonSecondary
+        onClick={handleClick}
+      >
         <TextExtraSmall white >
           {`Хочу стать ${title}ом`}
         </TextExtraSmall>

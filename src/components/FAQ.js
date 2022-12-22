@@ -5,7 +5,10 @@ import QuestionsList from "./QuestionsList";
 
 function FAQ() {
   return (
-    <SectionWrapper margin='L' >
+    <SectionWrapper
+      margin='L'
+      id="faq"
+    >
       <FlexWrapper
         direction="column"
         gap="40px"

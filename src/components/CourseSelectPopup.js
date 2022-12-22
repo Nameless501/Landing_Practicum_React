@@ -6,7 +6,7 @@ import RadioButton from "./RadioButton";
 
 function CourseSelectPopup({ getInputValue }) {
   useEffect(() => {
-    getInputValue('course-popup', 'programming')
+    getInputValue('course', 'programming')
   }, []);
 
   function handleChange(evt) {
@@ -31,7 +31,7 @@ function CourseSelectPopup({ getInputValue }) {
         <RadioButton
           Button={ButtonRadioXS}
           TextElement={TextRadioSmall}
-          name="course-popup"
+          name="course"
           id="course-programming-popup"
           value="programming"
           text="Программирование"
@@ -41,7 +41,7 @@ function CourseSelectPopup({ getInputValue }) {
         <RadioButton
           Button={ButtonRadioXS}
           TextElement={TextRadioSmall}
-          name="course-popup"
+          name="course"
           id="course-analytics-popup"
           value="analytics"
           text="Аналитика"
@@ -50,7 +50,7 @@ function CourseSelectPopup({ getInputValue }) {
         <RadioButton
           Button={ButtonRadioXS}
           TextElement={TextRadioSmall}
-          name="course-popup"
+          name="course"
           id="course-design-popup"
           value="design"
           text="Дизайн"
@@ -59,7 +59,7 @@ function CourseSelectPopup({ getInputValue }) {
         <RadioButton
           Button={ButtonRadioXS}
           TextElement={TextRadioSmall}
-          name="course-popup"
+          name="course"
           id="course-marketing-popup"
           value="marketing"
           text="Маркетинг"
@@ -68,7 +68,7 @@ function CourseSelectPopup({ getInputValue }) {
         <RadioButton
           Button={ButtonRadioXS}
           TextElement={TextRadioSmall}
-          name="course-popup"
+          name="course"
           id="course-management-popup"
           value="management"
           text="Менеджмент"

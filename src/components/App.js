@@ -15,7 +15,7 @@ import PopupWithVideo from './PopupWithVideo';
 
 function App() {
   const [formPopupState, setFormPopupState] = useState(false);
-  const [videoPopupState, setVideoPopupState] = useState({ open: false, video: '' })
+  const [videoPopupState, setVideoPopupState] = useState({ open: false, video: '' });
 
   function handleClosePopups() {
     setFormPopupState(false);

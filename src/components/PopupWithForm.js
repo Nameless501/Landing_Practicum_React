@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import useFormValidation from "../hooks/useFormValidation";
 import { TextRegularBold, TextSmall } from "../assets/styles/Text";
@@ -13,6 +14,7 @@ import { useEffect } from "react";
 
 function PopupWithForm({ handleClose }) {
   const { inputsValue, isValid, getInputValue, onChange, clearValidation } = useFormValidation();
+  const [currentVacancy, setCurrentVacancy] = useState({});
   const location = useLocation();
 
   function handleSubmit(evt) {
@@ -24,7 +26,16 @@ function PopupWithForm({ handleClose }) {
   }
 
   useEffect(() => {
-    clearValidation();
+    if (location.pathname === "/vacancy") {
+      const vacancy = JSON.parse(localStorage.getItem('vacancy'));
+      setCurrentVacancy(vacancy);
+
+      getInputValue("vacancy", vacancy.name);
+    }
+
+    return (() => {
+      clearValidation();
+    })
   }, []);
 
   return (
@@ -43,7 +54,11 @@ function PopupWithForm({ handleClose }) {
       <TextRegularBold
         align="center"
       >
-        Расскажите нам о себе и мы сохраним ваши данные
+        {location.pathname === "/" && "Расскажите нам о себе и мы сохраним ваши данные"}
+        {location.pathname === "/vacancy" &&
+          (currentVacancy.role === "mentor" ? `Хочу стать наставником на курсе ${currentVacancy.name}`
+          : `Хочу стать ревьюером на курсе ${currentVacancy.name}`)
+        }
       </TextRegularBold>
       <FlexWrapper
         direction="column"

@@ -3,7 +3,7 @@ import { ButtonRadioM } from '../assets/styles/Radio';
 import { TextRadio } from '../assets/styles/Text';
 import RadioButton from "./RadioButton";
 
-function RoleSelect({ handleSelectedChange }) {
+function RoleSelect({ selected, handleSelectedChange }) {
   return (
     <FlexWrapper
       as="fieldset"
@@ -13,20 +13,21 @@ function RoleSelect({ handleSelectedChange }) {
       <RadioButton
         Button={ButtonRadioM}
         TextElement={TextRadio}
-        name="role"
+        name="roleSelect"
         id="role-mentor"
         value="mentor"
         text="Наставник"
-        defaultChecked
+        checked={selected === "mentor"}
         handleChange={handleSelectedChange}
       />
       <RadioButton
         Button={ButtonRadioM}
         TextElement={TextRadio}
-        name="role"
+        name="roleSelect"
         id="role-reviewer"
         value="reviewer"
         text="Ревьюер"
+        checked={selected === "reviewer"}
         handleChange={handleSelectedChange}
       />
     </FlexWrapper>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Lead from './Lead';
 import HowTo from './HowTo';
 import ChooseRole from './ChooseRole';
@@ -7,13 +8,19 @@ import FAQ from './FAQ';
 import Contacts from './Contacts';
 
 function MainPage({ handleOpenFormPopup, handleOpenVideoPopup }) {
+  const [selectedRoleAndCourse, setRoleAndCourse] = useState({ roleSelect: 'mentor', courseSelect: 'programming' });
+
   return (
     <>
       <Lead />
       <HowTo />
-      <ChooseRole />
+      <ChooseRole
+        setRoleAndCourse={setRoleAndCourse}
+      />
       <Vacancies
         handleOpen={handleOpenFormPopup}
+        selected={selectedRoleAndCourse}
+        setRoleAndCourse={setRoleAndCourse}
       />
       <Reviews
         handleOpen={handleOpenVideoPopup}

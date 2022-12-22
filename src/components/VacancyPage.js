@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
-import { useLocation, useHistory, Link } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { SectionWrapper } from "../assets/styles/SectionWrapper";
-import { FlexWrapper, LinkFlexWrapper } from "../assets/styles/FlexWrapper";
+import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import { H3, TextLarge, TextRegular, TextSmall } from "../assets/styles/Text";
 import { UnorderedList } from "../assets/styles/UnorderedList";
 import { TextSpan } from "../assets/styles/StyledSpan";
 import { ButtonPrimary } from "../assets/styles/Button";
+import VacancyRoleDescription from "./VacancyRoleDescription";
+import VacancyRequirementsDescription from "./VacancyRequirementsDescription";
+import LinkArrowRight from "./LinkArrowRight";
 
 function VacancyPage({ handleOpen }) {
   const [currentVacancy, setCurrentVacancy] = useState({})
@@ -35,15 +38,10 @@ function VacancyPage({ handleOpen }) {
         gap="50px"
         direction="column"
       >
-        <LinkFlexWrapper
-          as={Link}
+        <LinkArrowRight
           to="/"
-          self="true"
-        >
-          <TextSmall>
-            К списку предложений
-          </TextSmall>
-        </LinkFlexWrapper>
+          text="К списку предложений"
+        />
         <FlexWrapper
           gap="20px"
           direction="column"
@@ -51,7 +49,9 @@ function VacancyPage({ handleOpen }) {
           <H3
             as="h3"
           >
-            {currentVacancy.name}
+            {currentVacancy.role === "mentor" ?
+              `Наставник на курс ${currentVacancy.name}` : `Ревьюер на курс ${currentVacancy.name}`
+            }
           </H3>
           <TextLarge blue>
             {`[Оплата в среднем ${currentVacancy.salary} тысяч ₽]`}
@@ -70,6 +70,15 @@ function VacancyPage({ handleOpen }) {
             Если у вас есть знания и опыт в области фронтенд-разработки, то вы можете стать наставником.
           </TextRegular>
         </FlexWrapper>
+        <VacancyRoleDescription
+          vacancy={currentVacancy}
+        />
+        {
+          currentVacancy.description &&
+          <VacancyRequirementsDescription
+            vacancy={currentVacancy}
+          />
+        }
         <FlexWrapper
           gap="20px"
           direction="column"

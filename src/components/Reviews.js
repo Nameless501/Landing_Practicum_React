@@ -5,7 +5,10 @@ import VideoReviews from "./VideoReviews";
 
 function Reviews({ handleOpen }) {
   return (
-    <SectionWrapper margin='L' >
+    <SectionWrapper
+      margin='L'
+      id="reviews"
+    >
       <FlexWrapper
         direction="column"
         gap="40px"

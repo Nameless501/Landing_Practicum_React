@@ -11,8 +11,12 @@ export const YandexLogo = styled.img.attrs(props => ({
   width: 159px;
   height: 29px;
 
-@media screen and (max-width: 470px) {
-  width: 150px;
-  height: 25px;
-}
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 470px) {
+    width: 150px;
+    height: 25px;
+  }
 `

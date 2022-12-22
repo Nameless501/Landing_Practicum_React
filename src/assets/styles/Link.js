@@ -29,6 +29,10 @@ export const NavLink = styled(Link)`
   &:active > p {
     color: ${({ theme }) => theme.colors.button.darkBlue};
   }
+
+  &.active > p {
+    color: ${({ theme }) => theme.colors.main.blue};
+  }
 `
 
 export const NavLinkUnderline = styled(NavLink)`

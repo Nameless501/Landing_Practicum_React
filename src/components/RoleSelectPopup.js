@@ -6,7 +6,7 @@ import RadioButton from "./RadioButton";
 
 function RoleSelectPopup({ getInputValue }) {
   useEffect(() => {
-    getInputValue('role-popup', 'mentor')
+    getInputValue('role', 'mentor')
   }, []);
 
   function handleChange(evt) {
@@ -31,7 +31,7 @@ function RoleSelectPopup({ getInputValue }) {
         <RadioButton
           Button={ButtonRadioSBlack}
           TextElement={TextRadioSmall}
-          name="role-popup"
+          name="role"
           id="role-mentor-popup"
           value="mentor"
           text="Наставник"
@@ -41,7 +41,7 @@ function RoleSelectPopup({ getInputValue }) {
         <RadioButton
           Button={ButtonRadioSBlack}
           TextElement={TextRadioSmall}
-          name="role-popup"
+          name="role"
           id="role-reviewer-popup"
           value="reviewer"
           text="Ревьюер"

@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import { SectionWrapper } from "../assets/styles/SectionWrapper";
 import { H1, TextSmall } from "../assets/styles/Text";
 import { ButtonPrimary } from '../assets/styles/Button';
@@ -34,7 +35,10 @@ function Lead() {
           align="middle"
           margin='0 0 0 30px'
         >
-          <ButtonPrimary >
+          <ButtonPrimary
+            as={Link}
+            to="vacancies"
+          >
             <TextSmall white>
               Хочу делиться знаниями
             </TextSmall>

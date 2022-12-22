@@ -4,7 +4,7 @@ import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import { TextSmall } from '../assets/styles/Text';
 import Dropdown from "./Dropdown";
 import { Divider } from "../assets/styles/Divider";
-import VacancyDescription from './VacancyDescription';
+import VacancyFullDescription from './VacancyFullDescription';
 import { UnorderedList } from '../assets/styles/UnorderedList';
 
 function VacanciesList({ vacancies }) {
@@ -42,9 +42,12 @@ function VacanciesList({ vacancies }) {
             return (
               <li key={index}>
                 <Dropdown
-                  name={vacancy.name}
+                  name={
+                    vacancy.role === "mentor" ?
+                    `Наставник на курс ${vacancy.name}` : `Ревьюер на курс ${vacancy.name}`
+                  }
                 >
-                  <VacancyDescription
+                  <VacancyFullDescription
                     vacancy={vacancy}
                   />
                 </Dropdown>

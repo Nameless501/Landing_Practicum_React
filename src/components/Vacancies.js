@@ -8,19 +8,18 @@ import NoAvailableVacancies from "./NoAvailableVacancies";
 import VacanciesList from "./VacanciesList";
 import { vacanciesData } from "../utils/vacancies";
 
-function Vacancies({ handleOpen }) {
-  const [selected, setSelected] = useState({ role: 'mentor', course: 'programming' });
+function Vacancies({ selected, setRoleAndCourse, handleOpen }) {
   const [vacancies, setVacancies] = useState([]);
 
   function handleSelectedChange(evt) {
-    setSelected((current) => ({
+    setRoleAndCourse((current) => ({
       ...current,
       [evt.target.name]: evt.target.value,
     }))
   }
 
   function getSelectedVacancies() {
-    const currentVacancies = vacanciesData[selected.course][selected.role];
+    const currentVacancies = vacanciesData[selected.courseSelect][selected.roleSelect];
     setVacancies(() => currentVacancies);
   }
 
@@ -29,7 +28,10 @@ function Vacancies({ handleOpen }) {
   }, [selected]);
 
   return (
-    <SectionWrapper margin='L' >
+    <SectionWrapper
+      margin='L'
+      id="vacancies"
+    >
       <FlexWrapper
         direction="column"
         gap="40px"
@@ -43,9 +45,11 @@ function Vacancies({ handleOpen }) {
           gap="30px"
         >
           <RoleSelect
+            selected={selected.roleSelect}
             handleSelectedChange={handleSelectedChange}
           />
           <CourseSelect
+            selected={selected.courseSelect}
             handleSelectedChange={handleSelectedChange}
           />
         </FlexWrapper>
