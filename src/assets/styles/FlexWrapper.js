@@ -4,6 +4,7 @@ export const FlexWrapper = styled.div`
   margin: ${(props) => props.margin ? props.margin : '0'};
   padding: ${(props) => props.padding ? props.padding : '0'};
   max-width: ${(props) => props.maxWidth};
+  width: ${(props) => props.width};
   box-sizing: border-box;
   display: flex;
   flex-direction: ${(props) => props.direction};

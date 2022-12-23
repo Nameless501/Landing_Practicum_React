@@ -9,19 +9,25 @@ import decoration3 from '../assets/images/text_bullet_3.svg';
 
 function HowTo() {
   return (
-    <SectionWrapper margin='XL' >
+    <SectionWrapper
+      margin='XL'
+    >
       <FlexWrapper
         direction="column"
         gap="40px"
+        maxWidth="100%"
       >
         <H2 as="h2" >
           Как стать экспертом
         </H2>
-        <UnorderedList direction="row" gap="20px" >
+        <UnorderedList
+          direction="row"
+          justify="space-between"
+        >
           <li>
             <FlexWrapper
               maxWidth="387px"
-              gap="20px"
+              gap="15px"
             >
               <TextSpanWithImage
                 width="40px"
@@ -29,15 +35,18 @@ function HowTo() {
               >
                 <img src={decoration1} alt='декорация текста' />
               </TextSpanWithImage>
-              <H3 as='h3' >
-                Выберите роль и заполните заявку
+              <H3
+                as='h3'
+                spacing="-0.8px"
+              >
+                Выберите роль и&nbsp;заполните заявку
               </H3>
             </FlexWrapper>
           </li>
           <li>
             <FlexWrapper
-              maxWidth="387px"
-              gap="20px"
+              maxWidth="386px"
+              gap="15px"
             >
               <TextSpanWithImage
                 width="40px"
@@ -45,15 +54,18 @@ function HowTo() {
               >
                 <img src={decoration2} alt='декорация текста' />
               </TextSpanWithImage>
-              <H3 as='h3' >
-                Пройдите отбор и бесплатное обучение
+              <H3
+                as='h3'
+                spacing="-0.8px"
+              >
+                Пройдите отбор и&nbsp;бесплатное обучение
               </H3>
             </FlexWrapper>
           </li>
           <li>
             <FlexWrapper
               maxWidth="387px"
-              gap="20px"
+              gap="15px"
             >
               <TextSpanWithImage
                 width="40px"
@@ -61,8 +73,11 @@ function HowTo() {
               >
                 <img src={decoration3} alt='декорация текста' />
               </TextSpanWithImage>
-              <H3 as='h3' >
-                Начните&nbsp;делиться знаниями со студентами
+              <H3
+                as='h3'
+                spacing="-0.8px"
+              >
+                Начните&nbsp;делиться знаниями со&nbsp;студентами
               </H3>
             </FlexWrapper>
           </li>

@@ -9,11 +9,16 @@ import { ButtonPrimary } from "../assets/styles/Button";
 import VacancyRoleDescription from "./VacancyRoleDescription";
 import VacancyRequirementsDescription from "./VacancyRequirementsDescription";
 import LinkArrowRight from "./LinkArrowRight";
+import { MAIN_PAGE_ROUTE } from '../utils/constants';
 
 function VacancyPage({ handleOpen }) {
   const [currentVacancy, setCurrentVacancy] = useState({})
   const location = useLocation();
   const history = useHistory();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Сохранение данных вакансии в localStorage на случай, если пользователь обновит страницу.
   // Если данных вакансии нет, то переадрессация на главную страницу
@@ -27,7 +32,7 @@ function VacancyPage({ handleOpen }) {
       const vacancy = JSON.parse(localStorage.getItem('vacancy'));
       setCurrentVacancy(vacancy);
     } else {
-      history.push('/');
+      history.push(MAIN_PAGE_ROUTE);
     }
   }, [])
 
@@ -39,7 +44,10 @@ function VacancyPage({ handleOpen }) {
         direction="column"
       >
         <LinkArrowRight
-          to="/"
+          to={{
+            pathname: MAIN_PAGE_ROUTE,
+            state: { vacancy: currentVacancy },
+          }}
           text="К списку предложений"
         />
         <FlexWrapper
@@ -189,13 +197,17 @@ function VacancyPage({ handleOpen }) {
             и небольшие домашние задания, рассчитанные на 30-60 минут.
           </TextRegular>
         </FlexWrapper>
-        <ButtonPrimary
-          onClick={handleOpen}
+        <FlexWrapper
+          margin="10px 0 0"
         >
-          <TextSmall>
-            Откликнуться
-          </TextSmall>
-        </ButtonPrimary>
+          <ButtonPrimary
+            onClick={handleOpen}
+          >
+            <TextSmall>
+              Откликнуться
+            </TextSmall>
+          </ButtonPrimary>
+        </FlexWrapper>
       </FlexWrapper>
     </SectionWrapper>
   );

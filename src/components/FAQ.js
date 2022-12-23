@@ -6,7 +6,7 @@ import QuestionsList from "./QuestionsList";
 function FAQ() {
   return (
     <SectionWrapper
-      margin='L'
+      margin='XL'
       id="faq"
     >
       <FlexWrapper

@@ -4,7 +4,8 @@ import whiteArrow from '../images/arrow_white.svg';
 import blackArrow from '../images/arrow_black.svg';
 import whitePlay from '../images/play_white.svg';
 import blackPlay from '../images/play_black.svg';
-import closeIcon from '../images/close_icon.svg';
+import closeIconBlack from '../images/close_icon_black.svg';
+import closeIconWhite from '../images/close_icon_white.svg';
 
 export const Button = styled.button.attrs(props => ({
   type: props.type ? props.type : "button",
@@ -153,7 +154,7 @@ export const ButtonClosePopup = styled(Button)`
   width: 24px;
   height: 24px;
   background-color: transparent;
-  background-image: url(${closeIcon});
+  background-image: url(${props => props.white ? closeIconWhite : closeIconBlack});
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;

@@ -9,7 +9,10 @@ import reviewer from '../assets/images/reviewer.jpg';
 
 function ChooseRole({ setRoleAndCourse }) {
   return (
-    <SectionWrapper margin='XL' >
+    <SectionWrapper
+      id='choose-role'
+      margin='XL'
+    >
       <FlexWrapper
         direction="column"
         gap="40px"

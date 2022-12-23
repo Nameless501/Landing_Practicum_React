@@ -6,8 +6,10 @@ import { NavLink } from "../assets/styles/Link";
 function SocialLinksFooter() {
   return (
     <FlexWrapper
+      padding="2px 0"
       gap="15px"
       direction="row"
+      align="center"
     >
       <NavLink
         link="https://thecode.media/"

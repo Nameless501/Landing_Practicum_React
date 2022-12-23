@@ -10,8 +10,8 @@ function RoleCard({ image, title, value, setRoleAndCourse, children }) {
     setRoleAndCourse(current => ({
       ...current,
       roleSelect: value,
-    }))
-    scroller.scrollTo('vacancies');
+    }));
+    scroller.scrollTo('vacancies', { offset: -110 });
   }
 
   return (

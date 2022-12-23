@@ -14,6 +14,7 @@ function PopupWithVideo({ handleClose, src }) {
         onClick={handleClose}
         top="-25px"
         right="-25px"
+        white
       />
     </FlexWrapper>
   );

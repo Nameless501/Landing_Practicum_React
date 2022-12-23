@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 import Lead from './Lead';
 import HowTo from './HowTo';
 import ChooseRole from './ChooseRole';
@@ -9,6 +11,19 @@ import Contacts from './Contacts';
 
 function MainPage({ handleOpenFormPopup, handleOpenVideoPopup }) {
   const [selectedRoleAndCourse, setRoleAndCourse] = useState({ roleSelect: 'mentor', courseSelect: 'programming' });
+  const location = useLocation();
+
+  useEffect(() => {
+    if(location.state) {
+      const { role, course } = location.state.vacancy;
+      setRoleAndCourse({
+        roleSelect: role,
+        courseSelect: course,
+      });
+
+      scroller.scrollTo('vacancies', { offset: -110 });
+    }
+  }, []);
 
   return (
     <>

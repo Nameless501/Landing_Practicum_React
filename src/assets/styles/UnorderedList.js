@@ -8,6 +8,7 @@ export const UnorderedList = styled.ul`
   max-width: ${props => props.maxWidth};
   flex-direction: ${props => props.direction};
   align-items: ${props => props.align ? props.align : "center"};
+  justify-content: ${(props) => props.justify};
   gap: ${props => props.gap};
   list-style: none;
 

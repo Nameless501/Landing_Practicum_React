@@ -6,7 +6,7 @@ import VideoReviews from "./VideoReviews";
 function Reviews({ handleOpen }) {
   return (
     <SectionWrapper
-      margin='L'
+      margin='XL'
       id="reviews"
     >
       <FlexWrapper

@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { TextRegularBold, TextRegular, TextSmall } from "../assets/styles/Text";
+import { TextRegularBold, TextSmall } from "../assets/styles/Text";
 import { ButtonPrimary } from '../assets/styles/Button';
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
-import { UnorderedList } from "../assets/styles/UnorderedList";
-import { TextSpan } from "../assets/styles/StyledSpan";
 import VacancyRoleDescription from "./VacancyRoleDescription";
 import VacancyRequirementsDescription from "./VacancyRequirementsDescription";
+import { VACANCY_PAGE_ROUTE } from '../utils/constants';
 
 function VacancyFullDescription({ vacancy }) {
   return (
@@ -27,7 +26,7 @@ function VacancyFullDescription({ vacancy }) {
       <ButtonPrimary
         as={Link}
         to={{
-          pathname: "/vacancy",
+          pathname: VACANCY_PAGE_ROUTE,
           state: { vacancy },
         }}
       >

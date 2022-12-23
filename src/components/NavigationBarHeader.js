@@ -5,11 +5,13 @@ import { UnorderedList } from '../assets/styles/UnorderedList';
 
 function NavigationBarHeader() {
   return (
-    <UnorderedList direction="row" gap="35px" >
+    <UnorderedList
+      direction="row"
+      gap="35px" >
       <li>
         <NavLink
           as={Link}
-          to="vacancies"
+          to="choose-role"
           spy={true}
           offset={-110}
           activeClass="active"

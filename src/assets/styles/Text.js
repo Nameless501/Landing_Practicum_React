@@ -5,6 +5,7 @@ export const Text = styled.p`
   padding: 0;
   text-align: ${(props) => props.align};
   text-decoration: none;
+  letter-spacing: ${(props) => props.spacing};
 
   &:first-letter {
     text-transform: uppercase;

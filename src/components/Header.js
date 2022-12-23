@@ -5,6 +5,7 @@ import { StyledHeader } from '../assets/styles/StyledHeader';
 import { YandexLogo } from '../assets/styles/YandexLogo'
 import { ButtonGhost, ButtonSecondary } from '../assets/styles/Button';
 import { TextSmall, TextExtraSmall } from '../assets/styles/Text';
+import { FlexWrapper } from '../assets/styles/FlexWrapper';
 
 function Header({ handleOpen }) {
   const location = useLocation();
@@ -24,7 +25,10 @@ function Header({ handleOpen }) {
       />
       {
         location.pathname === '/' &&
-        <>
+        <FlexWrapper
+          direction="row"
+          gap="70px"
+        >
           <NavigationBarHeader />
           <ButtonGhost
             as={Link}
@@ -35,7 +39,7 @@ function Header({ handleOpen }) {
               Хочу делиться знаниями
             </TextSmall>
           </ButtonGhost>
-        </>
+        </FlexWrapper>
       }
       {
         location.pathname === '/vacancy' &&

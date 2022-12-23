@@ -8,7 +8,7 @@ function SocialLink({ link, name, width, height, children }) {
       link={link}
       as="a"
       gap="15px"
-      maxWidth="160px"
+      width="160px"
       direction="column"
       align="center"
     >

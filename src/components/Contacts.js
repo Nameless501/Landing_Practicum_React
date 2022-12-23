@@ -8,21 +8,25 @@ import decoration2 from '../assets/images/contacts_decoration_2.png';
 
 function Contacts() {
   return (
-    <SectionWrapper margin='L' >
+    <SectionWrapper margin='XL' >
       <FlexWrapper
         direction="column"
         gap="40px"
         align="center"
       >
-        <H2 as="h2" >
+        <H2
+          as="h2"
+          spacing="-1px"
+        >
           Если остались вопросы, мы на связи
         </H2>
         <FlexWrapper
           direction="row"
-          gap="31px"
+          gap="35px"
           justify="center"
         >
           <TextSpanWithImage
+            margin="21px 0 0"
             width="83px"
             height="74px"
           >
@@ -30,6 +34,7 @@ function Contacts() {
           </TextSpanWithImage>
           <SocialLinksContacts />
           <TextSpanWithImage
+            margin="21px 0 0"
             width="79px"
             height="67px"
           >

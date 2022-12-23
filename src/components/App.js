@@ -12,6 +12,7 @@ import Portal from './Portal';
 import PopupWrapper from './PopupWrapper';
 import PopupWithForm from './PopupWithForm';
 import PopupWithVideo from './PopupWithVideo';
+import { MAIN_PAGE_ROUTE, VACANCY_PAGE_ROUTE } from '../utils/constants';
 
 function App() {
   const [formPopupState, setFormPopupState] = useState(false);
@@ -38,13 +39,13 @@ function App() {
           handleOpen={handleOpenFormPopup}
         />
         <Switch>
-          <Route exact path='/' >
+          <Route exact path={MAIN_PAGE_ROUTE} >
             <MainPage
               handleOpenFormPopup={handleOpenFormPopup}
               handleOpenVideoPopup={handleOpenVideoPopup}
             />
           </Route>
-          <Route path='/vacancy' >
+          <Route path={VACANCY_PAGE_ROUTE} >
             <VacancyPage
               handleOpen={handleOpenFormPopup}
             />

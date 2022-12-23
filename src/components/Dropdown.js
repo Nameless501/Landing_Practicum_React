@@ -35,13 +35,15 @@ function Dropdown({ name, children }) {
     >
       <FlexWrapper
         direction="row"
-        padding="24px 0"
+        padding="22px 0 23px"
         justify="space-between"
         align="center"
         pointer
         onClick={toggleOpen}
       >
-        <TextLarge>
+        <TextLarge
+          spacing="-0.5px"
+        >
           {name}
         </TextLarge>
         <ButtonArrow
