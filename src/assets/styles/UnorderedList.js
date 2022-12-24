@@ -16,4 +16,9 @@ export const UnorderedList = styled.ul`
     margin: 0;
     padding: 0;
   }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: ${(props) => props.directionMobile};
+    gap: ${(props) => props.gapMobile};
+  }
 `

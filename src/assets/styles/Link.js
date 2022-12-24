@@ -54,4 +54,10 @@ export const NavLinkUnderline = styled(NavLink)`
   &:active {
     color: ${({ theme }) => theme.colors.button.darkBlue};
   }
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.regular};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.regular};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.regular};
+  }
 `

@@ -48,12 +48,14 @@ export const ButtonPrimary = styled(Button)`
     color: ${({ theme }) => theme.colors.main.white};
   }
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.main.blue};
-  }
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.main.blue};
+    }
 
-  &:active {
-    background-color: ${({ theme }) => theme.colors.button.darkBlue};
+    &:active {
+      background-color: ${({ theme }) => theme.colors.button.darkBlue};
+    }
   }
 
   &:disabled {
@@ -68,6 +70,10 @@ export const ButtonSecondary = styled(ButtonPrimary)`
   &:disabled {
     background-color: ${({ theme }) => theme.colors.main.gray};
   }
+
+  @media screen and (max-width: 767px) {
+    width: ${(props) => props.widthMobile ? props.widthMobile : "285px"};
+  }
 `
 
 export const ButtonSecondarySmall = styled(Button)`
@@ -79,12 +85,14 @@ export const ButtonSecondarySmall = styled(Button)`
     color: ${({ theme }) => theme.colors.button.secondary};
   }
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.main.gray};
-  }
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.main.gray};
+    }
 
-  &:active {
-    background-color: ${({ theme }) => theme.colors.main.gray};
+    &:active {
+      background-color: ${({ theme }) => theme.colors.main.gray};
+    }
   }
 `
 
@@ -95,12 +103,14 @@ export const ButtonGhost = styled(Button)`
   border: 2px solid ${({ theme }) => theme.colors.main.gray};
   color: ${({ theme }) => theme.colors.main.black};
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.button.lightGray};
-  }
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.button.lightGray};
+    }
 
-  &:active {
-    background-color: ${({ theme }) => theme.colors.button.lightGray};
+    &:active {
+      background-color: ${({ theme }) => theme.colors.button.lightGray};
+    }
   }
 `
 
@@ -115,14 +125,16 @@ export const ButtonArrow = styled(Button)`
   background-position: center;
   transform: rotate(${props => props.isOpen ? "180deg" : "0"});
 
-  ${FlexWrapper}:hover > & {
-    background-color: ${({ theme }) => theme.colors.main.black};
-    background-image: url(${whiteArrow});
-  }
+  @media screen and (min-width: 1024px) {
+    ${FlexWrapper}:hover > & {
+      background-color: ${({ theme }) => theme.colors.main.black};
+      background-image: url(${whiteArrow});
+    }
 
-  &:active {
-    background-color: ${({ theme }) => theme.colors.main.black};
-    background-image: url(${whiteArrow});
+    &:active {
+      background-color: ${({ theme }) => theme.colors.main.black};
+      background-image: url(${whiteArrow});
+    }
   }
 `
 
@@ -139,14 +151,22 @@ export const ButtonVideo = styled(Button)`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.main.blue};
-    background-image: url(${whitePlay});
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.main.blue};
+      background-image: url(${whitePlay});
+    }
+
+    &:active {
+      background-color: ${({ theme }) => theme.colors.button.darkBlue};
+      background-image: url(${whitePlay});
+    }
   }
 
-  &:active {
-    background-color: ${({ theme }) => theme.colors.button.darkBlue};
-    background-image: url(${whitePlay});
+  @media screen and (max-width: 767px) {
+    width: 30px;
+    height: 30px;
+    background-size: 14px 14px;
   }
 `
 
@@ -160,4 +180,25 @@ export const ButtonClosePopup = styled(Button)`
   position: absolute;
   top: ${(props) => props.top};
   right: ${(props) => props.right};
+`
+
+export const StyledBurgerButton = styled(Button)`
+  margin: auto 0;
+  width: 25px;
+  height: 17px;
+  box-sizing: border-box;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 5px;
+
+  & > div {
+    width: 100%;
+    height: 2px;
+    box-sizing: border-box;
+    border: 1px solid ${({ theme }) => theme.colors.main.black};
+    border-radius: 1px;
+  }
 `

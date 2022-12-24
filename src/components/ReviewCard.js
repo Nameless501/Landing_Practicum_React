@@ -9,15 +9,9 @@ function ReviewCard({ image, value, gridArea, handleOpen }) {
 
   return (
     <CardWithVideo
-      width="100%"
-      height="100%"
       gridArea={gridArea}
-      radius="30px"
     >
       <CardImage
-        width="100%"
-        height="100%"
-        radius="30px"
         src={image}
       />
       <ButtonVideo

@@ -23,6 +23,8 @@ function HowTo() {
         <UnorderedList
           direction="row"
           justify="space-between"
+          directionMobile="column"
+          gapMobile="20px"
         >
           <li>
             <FlexWrapper
@@ -30,8 +32,16 @@ function HowTo() {
               gap="15px"
             >
               <TextSpanWithImage
+                width="25px"
+                height="25px"
+                hideOnDesktop
+              >
+                <img src={decoration1} alt='декорация текста' />
+              </TextSpanWithImage>
+              <TextSpanWithImage
                 width="40px"
                 height="40px"
+                hideOnMobile
               >
                 <img src={decoration1} alt='декорация текста' />
               </TextSpanWithImage>
@@ -49,8 +59,16 @@ function HowTo() {
               gap="15px"
             >
               <TextSpanWithImage
+                width="25px"
+                height="25px"
+                hideOnDesktop
+              >
+                <img src={decoration2} alt='декорация текста' />
+              </TextSpanWithImage>
+              <TextSpanWithImage
                 width="40px"
                 height="40px"
+                hideOnMobile
               >
                 <img src={decoration2} alt='декорация текста' />
               </TextSpanWithImage>
@@ -68,8 +86,16 @@ function HowTo() {
               gap="15px"
             >
               <TextSpanWithImage
+                width="25px"
+                height="25px"
+                hideOnDesktop
+              >
+                <img src={decoration3} alt='декорация текста' />
+              </TextSpanWithImage>
+              <TextSpanWithImage
                 width="40px"
                 height="40px"
+                hideOnMobile
               >
                 <img src={decoration3} alt='декорация текста' />
               </TextSpanWithImage>

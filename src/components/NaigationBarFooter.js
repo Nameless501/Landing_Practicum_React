@@ -8,6 +8,9 @@ function NavigationBarFooter() {
     <FlexWrapper
       direction="row"
       gap="110px"
+      area="links"
+      directionMobile="column"
+      gapMobile="15px"
     >
       <UnorderedList
         direction="column"

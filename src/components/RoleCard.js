@@ -2,7 +2,7 @@ import { scroller } from 'react-scroll';
 import { H3, TextExtraSmall } from "../assets/styles/Text";
 import { ButtonSecondary } from "../assets/styles/Button";
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
-import { Card } from "../assets/styles/Card";
+import { StyledRoleCard } from "../assets/styles/Card";
 import { CardImage } from "../assets/styles/CardImage";
 
 function RoleCard({ image, title, value, setRoleAndCourse, children }) {
@@ -15,42 +15,39 @@ function RoleCard({ image, title, value, setRoleAndCourse, children }) {
   }
 
   return (
-    <Card
-      padding="50px"
-      radius="40px"
-      color="lightGray"
-      width="590px"
-      height="712px"
-      justify="space-between"
-    >
+    <StyledRoleCard>
       <FlexWrapper
         direction="column"
       >
         <CardImage
           src={image}
-          width="100%"
-          height="265px"
           radius="30px"
+          radiusMobile="20px"
+          heightMobile="160px"
         />
         <FlexWrapper
           margin="25px 0 0"
           direction="column"
           gap="15px"
+          gapMobile="10px"
         >
-          <H3 as="h3" >
+          <H3
+            as="h3"
+          >
             {title}
           </H3>
           {children}
         </FlexWrapper>
       </FlexWrapper>
       <ButtonSecondary
+        widthMobile="275px"
         onClick={handleClick}
       >
-        <TextExtraSmall white >
+        <TextExtraSmall >
           {`Хочу стать ${title}ом`}
         </TextExtraSmall>
       </ButtonSecondary>
-    </Card>
+    </StyledRoleCard>
   );
 }
 

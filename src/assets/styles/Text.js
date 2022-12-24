@@ -17,6 +17,12 @@ export const H1 = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.h1};
   font-size: ${({ theme }) => theme.fonts.size.h1};
   line-height: ${({ theme }) => theme.fonts.lineHeight.h1};
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.h1};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.h1};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.h1};
+  }
 `
 
 export const H2 = styled(Text)`
@@ -24,6 +30,12 @@ export const H2 = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.h2};
   font-size: ${({ theme }) => theme.fonts.size.h2};
   line-height: ${({ theme }) => theme.fonts.lineHeight.h2};
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.h2};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.h2};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.h2};
+  }
 `
 
 export const H3 = styled(Text)`
@@ -31,6 +43,12 @@ export const H3 = styled(Text)`
   font-weight: ${({ theme }) => theme.fonts.weight.h3};
   font-size: ${({ theme }) => theme.fonts.size.h3};
   line-height: ${({ theme }) => theme.fonts.lineHeight.h3};
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.h3};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.h3};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.h3};
+  }
 `
 
 export const TextLarge = styled(Text)`
@@ -40,9 +58,15 @@ export const TextLarge = styled(Text)`
   line-height: ${({ theme }) => theme.fonts.lineHeight.large};
   color: ${(props) => props.white ?
     props.theme.colors.main.white
-      : props.blue ?
-        props.theme.colors.main.blue :
-        props.theme.colors.main.black
+    : props.blue ?
+      props.theme.colors.main.blue :
+      props.theme.colors.main.black
+  };
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.large};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.large};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.large};
   }
 `
 
@@ -54,6 +78,12 @@ export const TextRegular = styled(Text)`
   color: ${(props) => props.white ?
     props.theme.colors.main.white : props.gray ?
       props.theme.colors.main.darkGray : props.theme.colors.main.black
+  };
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.regular};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.regular};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.regular};
   }
 `
 
@@ -64,9 +94,15 @@ export const TextRegularBold = styled(Text)`
   line-height: ${({ theme }) => theme.fonts.lineHeight.regularBold};
   color: ${(props) => props.white ?
     props.theme.colors.main.white
-      : props.blue ?
-        props.theme.colors.main.blue :
-        props.theme.colors.main.black
+    : props.blue ?
+      props.theme.colors.main.blue :
+      props.theme.colors.main.black
+  };
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.regularBold};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.regularBold};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.regularBold};
   }
 `
 
@@ -77,6 +113,12 @@ export const TextSmall = styled(Text)`
   line-height: ${({ theme }) => theme.fonts.lineHeight.small};
   color: ${(props) => props.white ?
     props.theme.colors.main.white : props.theme.colors.main.black
+  };
+
+  @media screen and (max-width: 767px) {
+    font-weight: ${({ theme }) => theme.fonts.weight.mobile.small};
+    font-size: ${({ theme }) => theme.fonts.size.mobile.small};
+    line-height: ${({ theme }) => theme.fonts.lineHeight.mobile.small};
   }
 `
 
@@ -87,7 +129,7 @@ export const TextExtraSmall = styled(Text)`
   line-height: ${({ theme }) => theme.fonts.lineHeight.extraSmall};
   color: ${(props) => props.white ?
     props.theme.colors.main.white : props.theme.colors.main.black
-  }
+  };
 `
 
 export const TextRadio = styled(Text)`
@@ -111,5 +153,5 @@ export const TextInput = styled(Text)`
   line-height: ${({ theme }) => theme.fonts.lineHeight.input};
   color: ${(props) => props.error ?
     props.theme.colors.service.error : props.theme.colors.main.black
-  }
+  };
 `

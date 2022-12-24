@@ -6,7 +6,7 @@ export const FlexWrapper = styled.div`
   max-width: ${(props) => props.maxWidth};
   width: ${(props) => props.width};
   box-sizing: border-box;
-  display: flex;
+  display: ${(props) => props.hideOnDesktop ? "none" : "flex"};
   flex-direction: ${(props) => props.direction};
   gap: ${(props) => props.gap};
   background-color: ${(props) => props.theme.colors.main[props.color]};
@@ -16,9 +16,17 @@ export const FlexWrapper = styled.div`
   align-items: ${(props) => props.align};
   justify-content: ${(props) => props.justify};
   position: ${(props) => props.position};
+  grid-area: ${(props) => props.area};
 
   &:hover {
     cursor: ${(props) => props.pointer ? "pointer" : "auto"};
+  }
+
+  @media screen and (max-width: 767px) {
+    display: ${(props) => props.hideOnMobile ? "none" : "flex"};
+    flex-direction: ${(props) => props.directionMobile};
+    gap: ${(props) => props.gapMobile};
+    width: ${(props) => props.widthMobile};
   }
 `
 
@@ -28,15 +36,21 @@ export const LinkFlexWrapper = styled(FlexWrapper).attrs(props => ({
 }))`
   text-decoration: none;
 
-  &:hover {
-    cursor: pointer;
+  &:visited > p {
+    color: ${({ theme }) => theme.colors.main.black};
   }
 
-  &:hover > p {
-    color: ${({ theme }) => theme.colors.main.blue};
-  }
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      cursor: pointer;
+    }
 
-  &:active > p {
-    color: ${({ theme }) => theme.colors.button.darkBlue};
+    &:hover > p {
+      color: ${({ theme }) => theme.colors.main.blue};
+    }
+
+    &:active > p {
+      color: ${({ theme }) => theme.colors.button.darkBlue};
+    }
   }
 `

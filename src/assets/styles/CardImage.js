@@ -8,7 +8,13 @@ export const CardImage = styled.img.attrs(props => ({
   padding: 0;
   display: block;
   object-fit: cover;
-  width: ${(props) => props.width};
+  width: ${(props) => props.width ? props.width : "100%"};
   height: ${(props) => props.height};
   border-radius: ${(props) => props.radius};
+
+  @media screen and (max-width: 767px) {
+    width: ${(props) => props.widthMobile ? props.widthMobile : "100%"};
+    height: ${(props) => props.heightMobile};
+    border-radius: ${(props) => props.radiusMobile};
+  }
 `

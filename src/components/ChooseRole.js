@@ -16,6 +16,7 @@ function ChooseRole({ setRoleAndCourse }) {
       <FlexWrapper
         direction="column"
         gap="40px"
+        gapMobile="25px"
       >
         <H2 as="h2" >
           Выберите роль по душе
@@ -23,6 +24,7 @@ function ChooseRole({ setRoleAndCourse }) {
         <FlexWrapper
           direction="row"
           gap="20px"
+          directionMobile="column"
         >
           <RoleCard
             image={mentor}
@@ -120,7 +122,7 @@ function ChooseRole({ setRoleAndCourse }) {
                   >
                     &bull;
                   </TextSpan>
-                  оценивает работы — зачёт/незачёт
+                  оценивает работы
                 </TextRegular>
               </li>
             </UnorderedList>

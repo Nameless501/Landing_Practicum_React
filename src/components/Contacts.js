@@ -29,6 +29,7 @@ function Contacts() {
             margin="21px 0 0"
             width="83px"
             height="74px"
+            hideOnMobile
           >
             <img src={decoration1} alt="декорация текста" />
           </TextSpanWithImage>
@@ -37,6 +38,7 @@ function Contacts() {
             margin="21px 0 0"
             width="79px"
             height="67px"
+            hideOnMobile
           >
             <img src={decoration2} alt="декорация текста" />
           </TextSpanWithImage>

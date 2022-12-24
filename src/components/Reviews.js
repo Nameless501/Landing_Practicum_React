@@ -12,6 +12,7 @@ function Reviews({ handleOpen }) {
       <FlexWrapper
         direction="column"
         gap="40px"
+        gapMobile="25px"
       >
         <H2>
           Истории ребят из нашей команды

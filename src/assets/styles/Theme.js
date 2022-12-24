@@ -5,9 +5,17 @@ export const Theme = {
     L: '130px',
     M: '100px',
     S: '40px',
+    mobile: {
+      XXL: '90px',
+      XL: '75px',
+      L: '60px',
+      M: '100px',
+      S: '40px',
+    }
   },
   section: {
     width: '1200px',
+    widthMobile: '315px',
   },
   colors: {
     main: {
@@ -46,6 +54,15 @@ export const Theme = {
       radio: '16px',
       radioSmall: '14px',
       input: '12px',
+      mobile: {
+        h1: '50px',
+        h2: '27px',
+        h3: '24px',
+        large: '20px',
+        regular: '18px',
+        regularBold: '18px',
+        small: '12px',
+      }
     },
     lineHeight: {
       h1: '80px',
@@ -59,6 +76,15 @@ export const Theme = {
       radio: '20px',
       radioSmall: '18px',
       input: '16px',
+      mobile: {
+        h1: '59px',
+        h2: '32px',
+        h3: '28px',
+        large: '23px',
+        regular: '21px',
+        regularBold: '21px',
+        small: '14px',
+      }
     },
     weight: {
       h1: 700,
@@ -72,6 +98,15 @@ export const Theme = {
       radio: 500,
       radioSmall: 500,
       input: 500,
+      mobile: {
+        h1: 700,
+        h2: 700,
+        h3: 500,
+        large: 500,
+        regular: 400,
+        regularBold: 700,
+        small: 500,
+      }
     },
     family: {
       h1: `'YS Display', sans-serif`,
