@@ -8,7 +8,7 @@ import { TextSmall, TextExtraSmall } from '../assets/styles/Text';
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
 import BurgerButton from './BurgerButton';
 
-function Header({ handleOpen }) {
+function Header({ handleOpenPopup, handleOpenSideMenu }) {
   const location = useLocation();
 
   function handleLogoClick() {
@@ -46,14 +46,16 @@ function Header({ handleOpen }) {
           <FlexWrapper
             hideOnDesktop
           >
-            <BurgerButton />
+            <BurgerButton
+              handleClick={handleOpenSideMenu}
+            />
           </FlexWrapper>
         </>
       }
       {
         location.pathname === '/vacancy' &&
         <ButtonSecondary
-          onClick={handleOpen}
+          onClick={handleOpenPopup}
         >
           <TextExtraSmall>
             Откликнуться

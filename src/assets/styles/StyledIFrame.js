@@ -13,6 +13,11 @@ export const StyledIFrame = styled.iframe.attrs(props => ({
   display: block
   object-position: center;
   border: 0;
-  width: 1000px;
+  width: 70vw;
   min-height: 500px;
+
+  @media screen and (max-width: 767px) {
+    width: 80vw;
+    min-height: 200px;
+  }
 `

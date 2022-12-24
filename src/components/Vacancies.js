@@ -35,14 +35,18 @@ function Vacancies({ selected, setRoleAndCourse, handleOpen }) {
       <FlexWrapper
         direction="column"
         gap="40px"
+        gapMobile="25px"
       >
-        <H2 as="h2" >
+        <H2
+          as="h2"
+        >
           Открытые предложения
         </H2>
         <FlexWrapper
           as="form"
           direction="column"
           gap="30px"
+          gapMobile="20px"
         >
           <RoleSelect
             selected={selected.roleSelect}

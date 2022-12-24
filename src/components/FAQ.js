@@ -12,8 +12,11 @@ function FAQ() {
       <FlexWrapper
         direction="column"
         gap="40px"
+        gapMobile="25px"
       >
-        <H2 as="h2" >
+        <H2
+          as="h2"
+        >
           FAQ
         </H2>
         <QuestionsList />

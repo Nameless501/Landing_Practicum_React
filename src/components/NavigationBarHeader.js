@@ -3,11 +3,15 @@ import { NavLink } from '../assets/styles/Link';
 import { TextRegular } from '../assets/styles/Text';
 import { UnorderedList } from '../assets/styles/UnorderedList';
 
-function NavigationBarHeader() {
+function NavigationBarHeader({ align, handleClose = null }) {
   return (
     <UnorderedList
       direction="row"
-      gap="35px" >
+      directionMobile="column"
+      gap="35px"
+      gapMobile="10px"
+      align={align}
+    >
       <li>
         <NavLink
           as={Link}
@@ -15,6 +19,7 @@ function NavigationBarHeader() {
           spy={true}
           offset={-110}
           activeClass="active"
+          onClick={handleClose}
         >
           <TextRegular>
             Направления
@@ -28,6 +33,7 @@ function NavigationBarHeader() {
           spy={true}
           offset={-110}
           activeClass="active"
+          onClick={handleClose}
         >
           <TextRegular>
             Предложения
@@ -41,6 +47,7 @@ function NavigationBarHeader() {
           spy={true}
           offset={-110}
           activeClass="active"
+          onClick={handleClose}
         >
           <TextRegular>
             Отзывы
@@ -54,6 +61,7 @@ function NavigationBarHeader() {
           spy={true}
           offset={-110}
           activeClass="active"
+          onClick={handleClose}
         >
           <TextRegular>
             FAQ

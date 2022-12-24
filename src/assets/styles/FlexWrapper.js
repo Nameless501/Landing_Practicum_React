@@ -27,6 +27,8 @@ export const FlexWrapper = styled.div`
     flex-direction: ${(props) => props.directionMobile};
     gap: ${(props) => props.gapMobile};
     width: ${(props) => props.widthMobile};
+    padding: ${(props) => props.paddingMobile};
+    overflow: ${(props) => props.scrollOnMobile && "scroll"};
   }
 `
 

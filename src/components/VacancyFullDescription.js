@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { TextRegularBold, TextSmall } from "../assets/styles/Text";
-import { ButtonPrimary } from '../assets/styles/Button';
+import { TextRegularBold, TextSmall, TextExtraSmall } from "../assets/styles/Text";
+import { ButtonPrimary, ButtonSecondary } from '../assets/styles/Button';
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
 import VacancyRoleDescription from "./VacancyRoleDescription";
 import VacancyRequirementsDescription from "./VacancyRequirementsDescription";
@@ -11,7 +11,9 @@ function VacancyFullDescription({ vacancy }) {
     <FlexWrapper
       margin="0 0 26px"
       maxWidth="707px"
+      widthMobile="315px"
       gap="55px"
+      gapMobile="30px"
       direction="column"
     >
       <TextRegularBold blue>
@@ -23,17 +25,37 @@ function VacancyFullDescription({ vacancy }) {
       <VacancyRequirementsDescription
         vacancy={vacancy}
       />
-      <ButtonPrimary
-        as={Link}
-        to={{
-          pathname: VACANCY_PAGE_ROUTE,
-          state: { vacancy },
-        }}
+      <FlexWrapper
+        hideOnMobile
       >
-        <TextSmall white >
-          Откликнуться
-        </TextSmall>
-      </ButtonPrimary>
+        <ButtonPrimary
+          as={Link}
+          to={{
+            pathname: VACANCY_PAGE_ROUTE,
+            state: { vacancy },
+          }}
+        >
+          <TextSmall >
+            Откликнуться
+          </TextSmall>
+        </ButtonPrimary>
+      </FlexWrapper>
+      <FlexWrapper
+        hideOnDesktop
+      >
+        <ButtonSecondary
+          as={Link}
+          to={{
+            pathname: VACANCY_PAGE_ROUTE,
+            state: { vacancy },
+          }}
+          widthMobile="315px"
+        >
+          <TextExtraSmall >
+            Откликнуться
+          </TextExtraSmall>
+        </ButtonSecondary>
+      </FlexWrapper>
     </FlexWrapper>
   );
 }

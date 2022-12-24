@@ -22,12 +22,14 @@ export const NavLink = styled(Link)`
     color: ${({ theme }) => theme.colors.main.black};
   }
 
-  &:hover > p {
-    color: ${({ theme }) => theme.colors.main.blue};
-  }
+  @media screen and (min-width: 1024px) {
+    &:hover > p {
+      color: ${({ theme }) => theme.colors.main.blue};
+    }
 
-  &:active > p {
-    color: ${({ theme }) => theme.colors.button.darkBlue};
+    &:active > p {
+      color: ${({ theme }) => theme.colors.button.darkBlue};
+    }
   }
 
   &.active > p {
@@ -47,12 +49,14 @@ export const NavLinkUnderline = styled(NavLink)`
     color: ${({ theme }) => theme.colors.main.darkGray};
   }
 
-  &:hover {
-    color: ${({ theme }) => theme.colors.main.blue};
-  }
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      color: ${({ theme }) => theme.colors.main.blue};
+    }
 
-  &:active {
-    color: ${({ theme }) => theme.colors.button.darkBlue};
+    &:active {
+      color: ${({ theme }) => theme.colors.button.darkBlue};
+    }
   }
 
   @media screen and (max-width: 767px) {

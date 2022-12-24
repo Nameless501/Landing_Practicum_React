@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ButtonGhost } from '../assets/styles/Button';
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
-import { TextSmall } from '../assets/styles/Text';
+import { TextSmall, TextLarge } from '../assets/styles/Text';
 import Dropdown from "./Dropdown";
 import { Divider } from "../assets/styles/Divider";
 import VacancyFullDescription from './VacancyFullDescription';
@@ -29,6 +29,7 @@ function VacanciesList({ vacancies }) {
     <FlexWrapper
       direction="column"
       gap="50px"
+      gapMobile="30px"
     >
       <FlexWrapper
         direction="column"
@@ -44,7 +45,7 @@ function VacanciesList({ vacancies }) {
                 <Dropdown
                   name={
                     vacancy.role === "mentor" ?
-                    `Наставник на курс ${vacancy.name}` : `Ревьюер на курс ${vacancy.name}`
+                      `Наставник на курс ${vacancy.name}` : `Ревьюер на курс ${vacancy.name}`
                   }
                 >
                   <VacancyFullDescription
@@ -59,13 +60,31 @@ function VacanciesList({ vacancies }) {
         </UnorderedList>
       </FlexWrapper>
       {renderedVacancies.length < vacancies.length &&
-        <ButtonGhost
-          onClick={showNextVacancies}
-        >
-          <TextSmall >
-            Показать еще
-          </TextSmall>
-        </ButtonGhost>
+        <>
+          <FlexWrapper
+            hideOnMobile
+          >
+            <ButtonGhost
+              onClick={showNextVacancies}
+            >
+              <TextSmall >
+                Показать еще
+              </TextSmall>
+            </ButtonGhost>
+          </FlexWrapper>
+          <FlexWrapper
+            hideOnDesktop
+          >
+            <ButtonGhost
+              widthMobile="315px"
+              onClick={showNextVacancies}
+            >
+              <TextLarge >
+                Показать еще
+              </TextLarge>
+            </ButtonGhost>
+          </FlexWrapper>
+        </>
       }
     </FlexWrapper>
   );

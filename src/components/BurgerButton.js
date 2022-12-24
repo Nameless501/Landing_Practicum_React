@@ -1,8 +1,10 @@
 import { StyledBurgerButton } from "../assets/styles/Button";
 
-function BurgerButton() {
+function BurgerButton({ handleClick }) {
   return (
-    <StyledBurgerButton>
+    <StyledBurgerButton
+      onClick={handleClick}
+    >
       <div />
       <div />
       <div />

@@ -12,15 +12,18 @@ import Portal from './Portal';
 import PopupWrapper from './PopupWrapper';
 import PopupWithForm from './PopupWithForm';
 import PopupWithVideo from './PopupWithVideo';
+import SideMenu from './SideMenu';
 import { MAIN_PAGE_ROUTE, VACANCY_PAGE_ROUTE } from '../utils/constants';
 
 function App() {
   const [formPopupState, setFormPopupState] = useState(false);
   const [videoPopupState, setVideoPopupState] = useState({ open: false, video: '' });
+  const [sideMenuState, setSideMenuState] = useState(false);
 
   function handleClosePopups() {
     setFormPopupState(false);
     setVideoPopupState({ open: false, video: '' });
+    setSideMenuState(false);
   }
 
   function handleOpenFormPopup() {
@@ -31,12 +34,17 @@ function App() {
     setVideoPopupState({ open: true, video });
   }
 
+  function handleOpenSideMenu() {
+    setSideMenuState(true);
+  }
+
   return (
     <ThemeProvider theme={Theme} >
       <PageWrapper>
         <GlobalStyles />
         <Header
-          handleOpen={handleOpenFormPopup}
+          handleOpenPopup={handleOpenFormPopup}
+          handleOpenSideMenu={handleOpenSideMenu}
         />
         <Switch>
           <Route exact path={MAIN_PAGE_ROUTE} >
@@ -69,6 +77,15 @@ function App() {
               <PopupWithVideo
                 handleClose={handleClosePopups}
                 src={videoPopupState.video}
+              />
+            </PopupWrapper>
+          }
+          {sideMenuState &&
+            <PopupWrapper
+              handleClose={handleClosePopups}
+            >
+              <SideMenu
+                handleClose={handleClosePopups}
               />
             </PopupWrapper>
           }

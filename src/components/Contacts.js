@@ -17,6 +17,7 @@ function Contacts() {
         <H2
           as="h2"
           spacing="-1px"
+          align="center"
         >
           Если остались вопросы, мы на связи
         </H2>

@@ -94,6 +94,10 @@ export const ButtonSecondarySmall = styled(Button)`
       background-color: ${({ theme }) => theme.colors.main.gray};
     }
   }
+
+  @media screen and (max-width: 767px) {
+    width: ${(props) => props.widthMobile ? props.widthMobile : "285px"};
+  }
 `
 
 export const ButtonGhost = styled(Button)`
@@ -111,6 +115,10 @@ export const ButtonGhost = styled(Button)`
     &:active {
       background-color: ${({ theme }) => theme.colors.button.lightGray};
     }
+  }
+
+  @media screen and (max-width: 767px) {
+    width: ${(props) => props.widthMobile ? props.widthMobile : "285px"};
   }
 `
 
@@ -135,6 +143,12 @@ export const ButtonArrow = styled(Button)`
       background-color: ${({ theme }) => theme.colors.main.black};
       background-image: url(${whiteArrow});
     }
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 45px;
+    height: 45px;
+    background-size: 25.5px 24px;
   }
 `
 

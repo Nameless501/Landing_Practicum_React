@@ -6,6 +6,7 @@ function QuestionAnswer({ children }) {
     <FlexWrapper
       margin="0 0 26px"
       maxWidth="692px"
+      widthMobile="315px"
       direction="column"
     >
       <TextRegular >
