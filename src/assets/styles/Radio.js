@@ -15,9 +15,11 @@ export const InputRadio = styled.input.attrs(props => ({
   border: 1.5px solid ${({ theme }) => theme.colors.button.secondary};
   border-radius: 100px;
 
-  &:hover {
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.service.neytral};
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      cursor: pointer;
+      background-color: ${({ theme }) => theme.colors.service.neytral};
+    }
   }
 
   &:checked {
@@ -74,7 +76,12 @@ export const ButtonRadioM = styled(ButtonRadio)`
     background-color: ${({ theme }) => theme.colors.button.lightGray};
   }
 
-  ${InputRadio}:checked + &{
+  ${InputRadio}:checked + & {
+    background-color: ${({ theme }) => theme.colors.button.secondary};
+    color: ${({ theme }) => theme.colors.main.white};
+  }
+
+  ${InputRadio}:checked + & {
     background-color: ${({ theme }) => theme.colors.button.secondary};
     color: ${({ theme }) => theme.colors.main.white};
   }
@@ -90,7 +97,7 @@ export const ButtonRadioSWhite = styled(ButtonRadio)`
     background-color: rgba(0, 0, 0, 0.06);
   }
 
-  ${InputRadio}:checked + &{
+  ${InputRadio}:checked + & {
     background-color: ${({ theme }) => theme.colors.main.white};
   }
 `
@@ -114,8 +121,25 @@ export const ButtonRadioXS = styled(ButtonRadio)`
     background-color: rgba(0, 0, 0, 0.06);
   }
 
-  ${InputRadio}:checked + &{
+  ${InputRadio}:checked + & {
     background-color: ${({ theme }) => theme.colors.button.secondary};
     color: ${({ theme }) => theme.colors.main.white};
+  }
+`
+export const ButtonRadioSelect = styled(ButtonRadio)`
+  padding: 0 12px;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  color: ${({ theme }) => theme.colors.main.white};
+  display: flex;
+  justify-content: flex-start;
+
+  ${InputRadio}:checked + & {
+    background-color: ${({ theme }) => theme.colors.main.gray};
+  }
+
+  & > p {
+    text-align: start;
   }
 `

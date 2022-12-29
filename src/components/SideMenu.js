@@ -15,7 +15,7 @@ function SideMenu({ handleClose }) {
         widthMobile="100%"
       >
         <ButtonClosePopup
-          top="30px"
+          top="25px"
           right="30px"
           onClick={handleClose}
         />

@@ -23,6 +23,7 @@ function PopupContactsTypeSelect({ getInputValue }) {
         <FlexWrapper
           direction="row"
           gap="5px"
+          align="center"
         >
           <InputRadio
             name="contact"
@@ -40,6 +41,7 @@ function PopupContactsTypeSelect({ getInputValue }) {
         <FlexWrapper
           direction="row"
           gap="5px"
+          align="center"
         >
           <InputRadio
             name="contact"

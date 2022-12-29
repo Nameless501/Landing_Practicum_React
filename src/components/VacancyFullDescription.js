@@ -43,18 +43,21 @@ function VacancyFullDescription({ vacancy }) {
       <FlexWrapper
         hideOnDesktop
       >
-        <ButtonSecondary
+        <FlexWrapper
           as={Link}
           to={{
             pathname: VACANCY_PAGE_ROUTE,
             state: { vacancy },
           }}
-          widthMobile="315px"
         >
-          <TextExtraSmall >
-            Откликнуться
-          </TextExtraSmall>
-        </ButtonSecondary>
+          <ButtonSecondary
+            widthMobile="315px"
+          >
+            <TextExtraSmall >
+              Откликнуться
+            </TextExtraSmall>
+          </ButtonSecondary>
+        </FlexWrapper>
       </FlexWrapper>
     </FlexWrapper>
   );

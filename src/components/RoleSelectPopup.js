@@ -1,28 +1,39 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
-import { TextRadio, TextRadioSmall } from '../assets/styles/Text';
+import { TextRadio, TextRadioSmall, TextExtraSmall } from '../assets/styles/Text';
 import { ButtonRadioSBlack } from '../assets/styles/Radio';
 import RadioButton from "./RadioButton";
 
 function RoleSelectPopup({ getInputValue }) {
+  const [selectedRole, setSelectedRole] = useState('mentor');
+
   useEffect(() => {
-    getInputValue('role', 'mentor')
-  }, []);
+    getInputValue('role', selectedRole);
+  }, [selectedRole]);
 
   function handleChange(evt) {
-    const { name, value } = evt.target;
-    getInputValue(name, value);
+    setSelectedRole(evt.target.value);
   }
 
   return (
     <FlexWrapper
       direction="column"
       gap="10px"
-      margin="-15px 0 0"
     >
-      <TextRadio>
-        Выберите роль
-      </TextRadio>
+      <FlexWrapper
+        hideOnMobile
+      >
+        <TextRadio>
+          Выберите роль
+        </TextRadio>
+      </FlexWrapper>
+      <FlexWrapper
+        hideOnDesktop
+      >
+        <TextExtraSmall>
+          Выберите роль
+        </TextExtraSmall>
+      </FlexWrapper>
       <FlexWrapper
         as="fieldset"
         direction="row"
@@ -35,7 +46,7 @@ function RoleSelectPopup({ getInputValue }) {
           id="role-mentor-popup"
           value="mentor"
           text="Наставник"
-          defaultChecked
+          checked={selectedRole === 'mentor'}
           handleChange={handleChange}
         />
         <RadioButton
@@ -45,6 +56,7 @@ function RoleSelectPopup({ getInputValue }) {
           id="role-reviewer-popup"
           value="reviewer"
           text="Ревьюер"
+          checked={selectedRole === 'reviewer'}
           handleChange={handleChange}
         />
       </FlexWrapper>

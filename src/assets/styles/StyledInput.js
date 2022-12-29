@@ -13,8 +13,14 @@ export const StyledInput = styled.input.attrs(props => ({
   padding: 0 12px 0 16px;
   width: 384px;
   height: 50px;
+  box-sizing: border-box;
   border: 2px solid ${(props) => props.theme.colors.service[props.state]};
   border-radius: 14px;
+
+  @media screen and (max-width: 767px) {
+    width: 285px;
+    height: 46px;
+  }
 
   &:focus {
     outline: none;
@@ -23,7 +29,7 @@ export const StyledInput = styled.input.attrs(props => ({
     };
   }
 
-  &:placeholder {
+  &::placeholder {
     color: ${({ theme }) => theme.colors.main.darkGray};
     font-family: ${({ theme }) => theme.fonts.family.radio};
     font-weight: ${({ theme }) => theme.fonts.weight.radio};

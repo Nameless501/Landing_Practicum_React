@@ -8,6 +8,7 @@ export const TextSpan = styled.span`
   width: ${props => props.width};
   height: ${props => props.height};
   min-height: ${props => props.minHeight};
+  box-sizing: border-box;
 
   @media screen and (max-width: 767px) {
     display: ${(props) => props.hideOnMobile ? "none" : "inline-block"};
