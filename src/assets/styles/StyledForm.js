@@ -20,7 +20,7 @@ export const StyledForm = styled.form`
 
   @media screen and (max-width: 767px) {
     border-radius: 20px;
-    padding: 40px 15px 25px;
+    padding: 45px 15px 25px;
     grid-template-columns: 285px;
     grid-template-rows: auto 25px auto 10px 50px;
   }

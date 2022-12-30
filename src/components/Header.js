@@ -3,7 +3,7 @@ import { Link, animateScroll } from 'react-scroll';
 import NavigationBarHeader from './NavigationBarHeader';
 import { StyledHeader } from '../assets/styles/StyledHeader';
 import { YandexLogo } from '../assets/styles/YandexLogo'
-import { ButtonGhost, ButtonSecondary } from '../assets/styles/Button';
+import { ButtonGhost, ButtonSecondary, ButtonPrimarySmall } from '../assets/styles/Button';
 import { TextSmall, TextExtraSmall } from '../assets/styles/Text';
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
 import BurgerButton from './BurgerButton';
@@ -54,13 +54,30 @@ function Header({ handleOpenPopup, handleOpenSideMenu }) {
       }
       {
         location.pathname === '/vacancy' &&
-        <ButtonSecondary
-          onClick={handleOpenPopup}
-        >
-          <TextExtraSmall>
-            Откликнуться
-          </TextExtraSmall>
-        </ButtonSecondary>
+        <>
+          <FlexWrapper
+            hideOnMobile
+          >
+            <ButtonSecondary
+              onClick={handleOpenPopup}
+            >
+              <TextExtraSmall>
+                Откликнуться
+              </TextExtraSmall>
+            </ButtonSecondary>
+          </FlexWrapper>
+          <FlexWrapper
+            hideOnDesktop
+          >
+            <ButtonPrimarySmall
+              onClick={handleOpenPopup}
+            >
+              <TextSmall>
+                Откликнуться
+              </TextSmall>
+            </ButtonPrimarySmall>
+          </FlexWrapper>
+        </>
       }
     </StyledHeader>
   );

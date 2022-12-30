@@ -131,7 +131,7 @@ export const ButtonRadioSelect = styled(ButtonRadio)`
   height: 40px;
   width: 100%;
   border-radius: 10px;
-  color: ${({ theme }) => theme.colors.main.white};
+  color: ${({ theme }) => theme.colors.main.black};
   display: flex;
   justify-content: flex-start;
 

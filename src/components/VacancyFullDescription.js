@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { TextRegularBold, TextSmall, TextExtraSmall } from "../assets/styles/Text";
 import { ButtonPrimary, ButtonSecondary } from '../assets/styles/Button';
-import { FlexWrapper } from "../assets/styles/FlexWrapper";
+import { FlexWrapper, LinkFlexWrapper } from "../assets/styles/FlexWrapper";
 import VacancyRoleDescription from "./VacancyRoleDescription";
 import VacancyRequirementsDescription from "./VacancyRequirementsDescription";
 import { VACANCY_PAGE_ROUTE } from '../utils/constants';
@@ -43,12 +43,13 @@ function VacancyFullDescription({ vacancy }) {
       <FlexWrapper
         hideOnDesktop
       >
-        <FlexWrapper
+        <LinkFlexWrapper
           as={Link}
           to={{
             pathname: VACANCY_PAGE_ROUTE,
             state: { vacancy },
           }}
+          self="true"
         >
           <ButtonSecondary
             widthMobile="315px"
@@ -57,7 +58,7 @@ function VacancyFullDescription({ vacancy }) {
               Откликнуться
             </TextExtraSmall>
           </ButtonSecondary>
-        </FlexWrapper>
+        </LinkFlexWrapper>
       </FlexWrapper>
     </FlexWrapper>
   );

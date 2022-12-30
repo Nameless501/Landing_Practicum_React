@@ -31,11 +31,8 @@ export const SelectMenuOptions = styled.div`
   background-color: ${({ theme }) => theme.colors.main.white};
   border-radius: 12px;
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
-  transform: translateY(-100%);
+  transform: translate(-50%, -100%);
   z-index: 1;
-
-  @media screen and (max-width: 767px) {
-  }
 `

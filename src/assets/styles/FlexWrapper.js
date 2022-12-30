@@ -37,6 +37,7 @@ export const LinkFlexWrapper = styled(FlexWrapper).attrs(props => ({
   target: props.self ? "_self" : "_blank",
 }))`
   text-decoration: none;
+  color: ${({ theme }) => theme.colors.main.black};
 
   &:visited > p {
     color: ${({ theme }) => theme.colors.main.black};

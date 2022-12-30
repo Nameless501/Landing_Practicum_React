@@ -63,6 +63,11 @@ export const ButtonPrimary = styled(Button)`
   }
 `
 
+export const ButtonPrimarySmall = styled(ButtonPrimary)`
+  width: 100px;
+  height: 30px;
+`
+
 export const ButtonSecondary = styled(ButtonPrimary)`
   width: 285px;
   height: 50px;

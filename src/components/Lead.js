@@ -1,7 +1,7 @@
 import { Link } from 'react-scroll';
 import { SectionWrapper } from "../assets/styles/SectionWrapper";
 import { FlexWrapper } from '../assets/styles/FlexWrapper';
-import { H1, TextSmall } from "../assets/styles/Text";
+import { H1, TextSmall, TextLarge } from "../assets/styles/Text";
 import { ButtonPrimary } from '../assets/styles/Button';
 import { TextSpanWithImage, TextSpan } from "../assets/styles/StyledSpan";
 import decoration1 from '../assets/images/text_decoration_1.png';
@@ -56,13 +56,13 @@ function Lead() {
           <TextSpanWithImage
             width="90px"
             height="90px"
-            margin='0 10px -18px 0'
+            margin='0 0 -18px'
             align="middle"
             hideOnMobile
           >
             <img src={decoration2} alt='декорация текста' />
           </TextSpanWithImage>
-          мир лучше
+          &nbsp;мир лучше
           <TextSpan
             align="middle"
             margin='0 0 0 30px'
@@ -72,7 +72,7 @@ function Lead() {
               as={Link}
               to="vacancies"
             >
-              <TextSmall white>
+              <TextSmall>
                 Хочу делиться знаниями
               </TextSmall>
             </ButtonPrimary>
@@ -103,9 +103,9 @@ function Lead() {
             as={Link}
             to="vacancies"
           >
-            <TextSmall white>
+            <TextLarge>
               Хочу делиться знаниями
-            </TextSmall>
+            </TextLarge>
           </ButtonPrimary>
         </FlexWrapper>
       </FlexWrapper>

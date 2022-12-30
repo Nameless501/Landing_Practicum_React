@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import { SectionWrapper } from "../assets/styles/SectionWrapper";
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
-import { H3, TextLarge, TextRegular, TextSmall } from "../assets/styles/Text";
+import { H2, H3, TextLarge, TextRegular, TextSmall } from "../assets/styles/Text";
 import { UnorderedList } from "../assets/styles/UnorderedList";
 import { TextSpan } from "../assets/styles/StyledSpan";
 import { ButtonPrimary } from "../assets/styles/Button";
@@ -40,7 +40,9 @@ function VacancyPage({ handleOpen }) {
     <SectionWrapper>
       <FlexWrapper
         maxWidth="1000px"
+        widthMobile="315px"
         gap="50px"
+        gapMobile="35px"
         direction="column"
       >
         <LinkArrowRight
@@ -52,15 +54,31 @@ function VacancyPage({ handleOpen }) {
         />
         <FlexWrapper
           gap="20px"
+          gapMobile="10px"
           direction="column"
         >
-          <H3
-            as="h3"
+          <FlexWrapper
+            hideOnMobile
           >
-            {currentVacancy.role === "mentor" ?
-              `Наставник на курс ${currentVacancy.name}` : `Ревьюер на курс ${currentVacancy.name}`
-            }
-          </H3>
+            <H3
+              as="h3"
+            >
+              {currentVacancy.role === "mentor" ?
+                `Наставник на курс ${currentVacancy.name}` : `Ревьюер на курс ${currentVacancy.name}`
+              }
+            </H3>
+          </FlexWrapper>
+          <FlexWrapper
+            hideOnDesktop
+          >
+            <H2
+              as="h2"
+            >
+              {currentVacancy.role === "mentor" ?
+                `Наставник на курс ${currentVacancy.name}` : `Ревьюер на курс ${currentVacancy.name}`
+              }
+            </H2>
+          </FlexWrapper>
           <TextLarge blue>
             {`[Оплата в среднем ${currentVacancy.salary} тысяч ₽]`}
           </TextLarge>
@@ -199,6 +217,7 @@ function VacancyPage({ handleOpen }) {
         </FlexWrapper>
         <FlexWrapper
           margin="10px 0 0"
+          hideOnMobile
         >
           <ButtonPrimary
             onClick={handleOpen}
@@ -206,6 +225,18 @@ function VacancyPage({ handleOpen }) {
             <TextSmall>
               Откликнуться
             </TextSmall>
+          </ButtonPrimary>
+        </FlexWrapper>
+        <FlexWrapper
+          margin="5px 0 0"
+          hideOnDesktop
+        >
+          <ButtonPrimary
+            onClick={handleOpen}
+          >
+            <TextLarge>
+              Откликнуться
+            </TextLarge>
           </ButtonPrimary>
         </FlexWrapper>
       </FlexWrapper>

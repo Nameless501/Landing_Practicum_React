@@ -143,118 +143,28 @@ function PopupWithForm({ handleClose }) {
           </TextExtraSmall>
         </ButtonSecondary>
       </FlexWrapper>
+      <FlexWrapper
+        hideOnMobile
+      >
+        <ButtonClosePopup
+          type="reset"
+          onClick={handleClose}
+          top="30px"
+          right="40px"
+        />
+      </FlexWrapper>
+      <FlexWrapper
+        hideOnDesktop
+      >
+        <ButtonClosePopup
+          type="reset"
+          onClick={handleClose}
+          top="15px"
+          right="15px"
+        />
+      </FlexWrapper>
     </StyledForm>
   );
 }
 
 export default PopupWithForm;
-
-
-
-
-
-
-{/*
-      <FlexWrapper
-        direction="column"
-      >
-        <FormInput
-          type="text"
-          name="name"
-          placeholder="Имя"
-          minLength="2"
-          maxLength="30"
-          getInputValue={getInputValue}
-        />
-        <FormInput
-          type="email"
-          name="email"
-          placeholder="Email"
-          getInputValue={getInputValue}
-        />
-        <PopupContactsTypeSelect
-          getInputValue={getInputValue}
-        />
-        {location.pathname === "/vacancy" &&
-          <>
-            <FormInput
-              type="url"
-              name="url"
-              placeholder="Ссылка на резюме"
-              getInputValue={getInputValue}
-            />
-            <FlexWrapper
-              direction="row"
-              gap="10px"
-              maxWidth="400px"
-            >
-              <InputCheckbox
-                name="contact-checkbox"
-                id="contact-checkbox"
-                value="agree"
-                required
-              />
-              <LabelRadio
-                id="contact-checkbox"
-              >
-                Даю согласие на обработку персональных данных
-              </LabelRadio>
-            </FlexWrapper>
-          </>
-        }
-      </FlexWrapper>
-      {location.pathname === "/" &&
-        <>
-          <RoleSelectPopup
-            getInputValue={getInputValue}
-          />
-          <CourseSelectPopup
-            getInputValue={getInputValue}
-          />
-          <FlexWrapper
-            direction="column"
-          >
-            <FormInput
-              type="url"
-              name="url"
-              placeholder="Ссылка на резюме"
-              getInputValue={getInputValue}
-            />
-            <FlexWrapper
-              direction="row"
-              gap="10px"
-              maxWidth="400px"
-            >
-              <InputCheckbox
-                name="contact-checkbox"
-                id="contact-checkbox"
-                value="agree"
-                required
-              />
-              <LabelRadio
-                id="contact-checkbox"
-              >
-                Даю согласие на обработку персональных данных
-              </LabelRadio>
-            </FlexWrapper>
-          </FlexWrapper>
-        </>
-      }
-      <FlexWrapper
-        margin="0 auto"
-      >
-        <ButtonPrimary
-          type="submit"
-          disabled={!isValid}
-        >
-          <TextSmall white>
-            Отправить
-          </TextSmall>
-        </ButtonPrimary>
-      </FlexWrapper>
-      <ButtonClosePopup
-        type="reset"
-        onClick={handleClose}
-        top="30px"
-        right="40px"
-      /> */}
