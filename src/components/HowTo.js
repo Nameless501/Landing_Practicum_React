@@ -3,6 +3,7 @@ import { H2, H3 } from "../assets/styles/Text";
 import { TextSpanWithImage } from "../assets/styles/StyledSpan";
 import { UnorderedList } from '../assets/styles/UnorderedList';
 import { FlexWrapper } from "../assets/styles/FlexWrapper";
+import { HowToGridWrapper } from "../assets/styles/GridWrapper";
 import decoration1 from '../assets/images/text_bullet_1.svg';
 import decoration2 from '../assets/images/text_bullet_2.svg';
 import decoration3 from '../assets/images/text_bullet_3.svg';
@@ -15,21 +16,14 @@ function HowTo() {
       <FlexWrapper
         direction="column"
         gap="40px"
-        maxWidth="100%"
       >
         <H2 as="h2" >
           Как стать экспертом
         </H2>
-        <UnorderedList
-          direction="row"
-          justify="space-between"
-          directionMobile="column"
-          gapMobile="20px"
-        >
-          <li>
+        <HowToGridWrapper>
             <FlexWrapper
-              maxWidth="387px"
               gap="15px"
+              area="left"
             >
               <TextSpanWithImage
                 width="25px"
@@ -47,16 +41,13 @@ function HowTo() {
               </TextSpanWithImage>
               <H3
                 as='h3'
-                spacing="-0.8px"
               >
                 Выберите роль и&nbsp;заполните заявку
               </H3>
             </FlexWrapper>
-          </li>
-          <li>
             <FlexWrapper
-              maxWidth="386px"
               gap="15px"
+              area="middle"
             >
               <TextSpanWithImage
                 width="25px"
@@ -74,16 +65,13 @@ function HowTo() {
               </TextSpanWithImage>
               <H3
                 as='h3'
-                spacing="-0.8px"
               >
                 Пройдите отбор и&nbsp;бесплатное обучение
               </H3>
             </FlexWrapper>
-          </li>
-          <li>
             <FlexWrapper
-              maxWidth="387px"
               gap="15px"
+              area="right"
             >
               <TextSpanWithImage
                 width="25px"
@@ -101,13 +89,11 @@ function HowTo() {
               </TextSpanWithImage>
               <H3
                 as='h3'
-                spacing="-0.8px"
               >
                 Начните&nbsp;делиться знаниями со&nbsp;студентами
               </H3>
             </FlexWrapper>
-          </li>
-        </UnorderedList>
+        </HowToGridWrapper>
       </FlexWrapper>
     </SectionWrapper>
   );

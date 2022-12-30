@@ -39,3 +39,15 @@ export const VideoGridWrapper = styled(GridWrapper)`
       "rightTop rightBottom";
   }
 `
+
+export const HowToGridWrapper = styled(GridWrapper)`
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  grid-template-rows: auto;
+  grid-template-areas:
+    "left middle right";
+  gap: 20px;
+
+  @media screen and (max-width: 767px) {
+
+  }
+`
