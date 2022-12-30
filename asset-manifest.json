@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Landing_Practicum_React/static/css/main.e6c13ad2.css",
-    "main.js": "/Landing_Practicum_React/static/js/main.ab03edb3.js",
+    "main.js": "/Landing_Practicum_React/static/js/main.09ef29bc.js",
     "static/media/Polina.jpg": "/Landing_Practicum_React/static/media/Polina.f318ca12eda643a8997a.jpg",
     "static/media/Rita.jpg": "/Landing_Practicum_React/static/media/Rita.ae080011178629f721f9.jpg",
     "static/media/Vova.jpg": "/Landing_Practicum_React/static/media/Vova.a8fe328614309e01a0f3.jpg",
@@ -14,8 +14,8 @@
     "static/media/Sasha.jpg": "/Landing_Practicum_React/static/media/Sasha.46d92d4d252159b13a6c.jpg",
     "static/media/mentor.jpg": "/Landing_Practicum_React/static/media/mentor.e789a4e7640e2b9fd1e5.jpg",
     "static/media/Tina.jpg": "/Landing_Practicum_React/static/media/Tina.dca2e4f66fb394c1f3a4.jpg",
+    "static/media/yandex_logo.svg": "/Landing_Practicum_React/static/media/yandex_logo.227dd997732b7dbb4655d2370d8c0738.svg",
     "static/media/text_bullet_1.svg": "/Landing_Practicum_React/static/media/text_bullet_1.00c1e9098ae65ba2a87b3758f19c36a4.svg",
-    "static/media/yandex_logo.svg": "/Landing_Practicum_React/static/media/yandex_logo.034ab7d598ae64aaba7fcc4f0995f88e.svg",
     "static/media/close_icon_black.svg": "/Landing_Practicum_React/static/media/close_icon_black.b8e767fe279ce4b51627c184f0a208e6.svg",
     "static/media/close_icon_white.svg": "/Landing_Practicum_React/static/media/close_icon_white.d295542762bf04b1b15467192926168a.svg",
     "static/media/text_bullet_3.svg": "/Landing_Practicum_React/static/media/text_bullet_3.ed880cac2334e6f7b27efbb6be2ec26d.svg",
@@ -33,10 +33,10 @@
     "static/media/play_black.svg": "/Landing_Practicum_React/static/media/play_black.35480b74f30ea4ad1eb3b3f4560a30ba.svg",
     "static/media/contacts_decoration_1.svg": "/Landing_Practicum_React/static/media/contacts_decoration_1.d213e980d70f3b7ede49bfd794eea5d0.svg",
     "main.e6c13ad2.css.map": "/Landing_Practicum_React/static/css/main.e6c13ad2.css.map",
-    "main.ab03edb3.js.map": "/Landing_Practicum_React/static/js/main.ab03edb3.js.map"
+    "main.09ef29bc.js.map": "/Landing_Practicum_React/static/js/main.09ef29bc.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.ab03edb3.js"
+    "static/js/main.09ef29bc.js"
   ]
 }
