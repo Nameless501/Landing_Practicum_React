@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Landing_Practicum_React/static/css/main.e6c13ad2.css",
-    "main.js": "/Landing_Practicum_React/static/js/main.09ef29bc.js",
+    "main.js": "/Landing_Practicum_React/static/js/main.7a2cc073.js",
     "static/media/Polina.jpg": "/Landing_Practicum_React/static/media/Polina.f318ca12eda643a8997a.jpg",
     "static/media/Rita.jpg": "/Landing_Practicum_React/static/media/Rita.ae080011178629f721f9.jpg",
     "static/media/Vova.jpg": "/Landing_Practicum_React/static/media/Vova.a8fe328614309e01a0f3.jpg",
@@ -33,10 +33,10 @@
     "static/media/play_black.svg": "/Landing_Practicum_React/static/media/play_black.35480b74f30ea4ad1eb3b3f4560a30ba.svg",
     "static/media/contacts_decoration_1.svg": "/Landing_Practicum_React/static/media/contacts_decoration_1.d213e980d70f3b7ede49bfd794eea5d0.svg",
     "main.e6c13ad2.css.map": "/Landing_Practicum_React/static/css/main.e6c13ad2.css.map",
-    "main.09ef29bc.js.map": "/Landing_Practicum_React/static/js/main.09ef29bc.js.map"
+    "main.7a2cc073.js.map": "/Landing_Practicum_React/static/js/main.7a2cc073.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.09ef29bc.js"
+    "static/js/main.7a2cc073.js"
   ]
 }
