@@ -48,6 +48,11 @@ export const HowToGridWrapper = styled(GridWrapper)`
   gap: 20px;
 
   @media screen and (max-width: 767px) {
-
+    grid-template-columns: 315px;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "left"
+      "middle"
+      "right";
   }
 `
